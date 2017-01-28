@@ -1,0 +1,83 @@
+---
+title: "Research"
+---
+
+<!--html_preserve-->
+<style type="text/css">
+ul.CV {
+list-style-type: none;
+}
+</style>
+<!--/html_preserve-->
+
+```{r echo=FALSE,warning=FALSE,message=FALSE}
+library(RefManageR)
+```
+
+My research interests lie at the intersection of **education and technology**, with a dash of human-computer interaction. I am mainly interested in understanding what happens in the (physical) classroom, and in blended learning settings that combine face-to-face and online activities. With that understanding, my aim is to support teachers and learners with novel technologies that support them in their **everyday** learning. I've paid special attention to more complex, active methods of learning such as collaborative learning, or the provision of timely feedback through learning analytics. In order to do that, I have used a variety of technologies and methods, from very simple [questionnaires aimed at reflection](http://prolearning.realto.ch), to [community-oriented platforms to support learning design by teachers](http://ilde.upf.edu), [augmented paper tabletops](http://chili.epfl.ch/page-110567-en.html), or cutting-edge [mobile eye-tracking technology](http://chili.epfl.ch/page-118328-en.html).
+
+
+
+# Academic Roles
+
+* 2016 - 17
+    + Senior Research Fellow - Center of Excellence in Educational Innovation, School of Educational Sciences, [Tallinn University](http://tlu.ee), Estonia.
+* 2014 - 16
+    + Scientist (Marie Curie Fellow) - [CHILI Lab](http://chili.epfl.ch/), [École Polytechnique Fédérale de Lausanne (EPFL)](http://epfl.ch/), Switzerland.
+* 2012 - 13
+    + Post-doctoral researcher - [GSIC-EMIC group](http://gsic.uva.es), [University of Valladolid](http://www.uva.es), Spain.
+* 2009 - 2012
+    + Doctoral researcher - [GSIC-EMIC group](http://gsic.uva.es), [University of Valladolid](http://www.uva.es), Spain.
+
+*************
+
+# Other Work & Research Experience
+
+* Visiting Researcher - [Laboratoire d'Informatique de Grenoble](https://www.liglab.fr/), France (2013).
+* International Fellow - [Center for Technology in Learning](https://www.sri.com/about/organization/education/ctl), SRI International, USA (2010). 
+* Research & Development Engineer - [Telefónica I+D](http://tid.es/), Spain (2001-2008).
+* Research & Development Intern - [Telefónica I+D](http://tid.es/), Spain (2000-2001).
+
+
+*************
+
+# Awards and Distinctions
+
+* 2016
+    + Best Paper Award, European Conference on Technology-Enhanced Learning.
+* 2014 - 15
+    + Marie Curie Intra-European Fellowship, European Commission.
+* 2013
+    + Best Doctoral Thesis Award, eMadrid (R&D Network on Educational Technology
+in the Region of Madrid).
+* 2012
+    + Ph.D. Extraordinary Award, Engineering/Architecture Area, University of
+Valladolid.
+
+
+
+*************
+
+# Education
+
+* 2008 - 2012
+    + PhD in Information and Communication Technologies - University of Valladolid, Spain.
+* 1996 - 2001
+    + BSc in Telecommunications Engineering.
+
+*************
+
+# Publications
+
+
+```{r echo=FALSE, results="asis",comment=FALSE, warning=F}
+file_pubs <- ReadBib("cvreferences.bib", check=F)
+dates <- unlist(unique(file_pubs$year))[order(unlist(unique(file_pubs$year)),decreasing = TRUE)]
+#Prints recerences
+for (date in dates) {
+  cat(paste0("##",date),"\n")
+  print(file_pubs[list(year=date)],.opts = list(check.entries=F, style="markdown",bib.style ="authoryear" ,max.names =10,dashed=FALSE))
+  cat("\n")
+}
+
+```

@@ -1,0 +1,29 @@
+name: "Luis_P_Prieto"
+navbar:
+  title: "Luis P. Prieto"
+  left:
+    - text: "Research"
+      icon: fa-flask fa-2x
+      href: research.html
+    - text: "CV"
+      icon: fa-file  fa-2x
+      href: doc/LuisPPrieto_CV.pdf
+    - text: "Other Projects"
+      icon: fa-camera-retro fa-2x
+      href: projects.html
+  right:
+    - icon: fa-book fa-2x
+      href: https://scholar.google.ch/citations?user=ySpnj0MAAAAJ&hl=en&oi=ao
+    - icon: fa-linkedin fa-2x
+      href: http://linkedin.com/in/lprisan
+    - icon: fa-github fa-2x
+      href: https://github.com/lprisan
+output_dir: "docs"
+output:
+  html_document:
+    css: style.css
+    theme: yeti
+    highlight: textmate
+    include:
+        after_body: footer.html
+exclude: ["*.csv", "*.bib","*.sh","*.R"]
