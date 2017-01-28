@@ -18,7 +18,7 @@ navbar:
       href: http://linkedin.com/in/lprisan
     - icon: fa-github fa-2x
       href: https://github.com/lprisan
-output_dir: "docs"
+output_dir: "."
 output:
   html_document:
     css: style.css
@@ -26,4 +26,4 @@ output:
     highlight: textmate
     include:
         after_body: footer.html
-exclude: ["*.csv", "*.bib","*.sh","*.R"]
+exclude: ["*.csv", "*.bib","*.sh","*.R","README.md"]

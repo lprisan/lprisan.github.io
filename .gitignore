@@ -11,3 +11,7 @@ Gemfile.lock
 
 # others
 *.swp
+.Rproj.user
+
+.Rhistory
+.RData
