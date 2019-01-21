@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -20,9 +20,11 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -31,10 +33,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -89,6 +93,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -251,49 +258,14 @@ $(document).ready(function () {
             </div>
             <div class="col-md-9">
       <h3>I'm a Senior Research Fellow at <a href="http://tlu.ee" target="_new">Tallinn University</a>.</h3>
-		<h3>I spend most of my time doing  <a href="./research.html">research</a> on educational technologies and learning analytics.</h3>
-	  <h3>For more detailed information, check out my academic &amp; professional <a href="./docs/LuisPPrieto_CV.pdf">CV</a>.</h3>
+		<h3>I spend most of my time doing  <a href="./research.html">research</a> on educational technologies and learning analytics. Lately I have also been <a href="">blogging</a> about transversal issues in doctoral education, such as Ph.D. student productivity and wellbeing, supervision, etc.</h3>
+	  <h3>For more detailed information, check out my (slightly outdated) academic &amp; professional <a href="./docs/LuisPPrieto_CV.pdf">CV</a>.</h3>
 		<h3>I also have other personal and artistic <a href="./projects.html">projects</a> which you can also check out.</h3>
             </div>
     </div>
     </div>
  </div>
 
-    <!--div class="container">
-
-      <div class="row">
-        <div class="col-md-6">
-          <h2>MSc Geographic Data Science</h2>
-          <img src="./images/MSCGDS.png" alt="GDSL" class="pull-left gap-right">
-          <p>We have an excellent MSc in the emerging area of Geographic Data Science and is accepting applications. We have an <a href ="https://spark.adobe.com/page/e6XbJ/">e-brochure</a>, and you can click <a href="https://www.liverpool.ac.uk/study/postgraduate/taught/geographic-data-science-msc/overview/">here</a> to get an overview of the course or find out how to apply.</p>
-        </div>
-        <div class="col-md-6">
-          <h2>Geographic Data Science Lab</h2>
-          <img src="./images/GDSL.png" alt="GDSL" class="pull-left gap-right">
-          <p><a href = "https://geographicdatascience.com/">GDSL</a> are a collective of researchers with interests in the fusion of Data Science, GIS and their appropriate use. You can find our blog <a href = "https://geographicdatascience.com/blog/">here</a>. We are always interested in hearing from new collaborators and welcome visitors.</p>
-       </div>
-      </div>
-
- <div class="row">
-        <div class="col-md-8">
-        	<h2>Biography</h2>
-          	<p> I am a Professor of Geographic Information Science at the University of Liverpool and Deputy Director of the <a href="http://www.cdrc.ac.uk">ESRC Consumer Data Research Centre</a> (CDRC). Prior to this I worked at University College London as a researcher and is also where I completed my PhD. In a general sense my research is concerned with how the complexities of individual behaviours manifest spatially and can be represented and understood though a framework of geographic data science.</p>
-			<p>In particular, this research has extended a tradition of area classification and I have developed a broad critique of the ways in which geodemographic methods can be refined through modern scientific approaches to data mining, geographic information science and quantitative human geography. I am an avid R user, and also advocate of <a href="http://dx.doi.org/10.1080/13658816.2015.1137579">Open Geographic Information Science</a>.</p>
-        </div>
-
-        <div class="col-md-4">
-        <h2>Impact</h2>
-			<p>Where appropriate I try to make my academic work accessible, with some examples of these activities including:</p>
-			<div class="list-group">
-				<a href="https://observatory.cartodb.com/editor/5de68840-16ef-11e6-bf4f-0ea31932ec1d/embed" class="list-group-item">USA Geodemographics</a>
-				<a href="https://data.cdrc.ac.uk/product/cdrc-2011-census-open-atlas" class="list-group-item">2011 Census Atlas</a>
-				<a href="https://data.cdrc.ac.uk/product/cdrc-2011-transport-map-book" class="list-group-item">Transportation Map Book</a>
-				<a href="http://www.educationalprofiler.org" class="list-group-item">Education Profiler</a>
-				<a href="http://www.policestreets.co.uk" class="list-group-item">Police Streets</a>
-			</div>
-		</div>
-
-</div-->
 
 
 <hr>
@@ -330,7 +302,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
