@@ -13,7 +13,7 @@ navbar:
       href: projects.html
   right:
     - icon: fa-book fa-2x
-      href: https://scholar.google.ch/citations?user=ySpnj0MAAAAJ&hl=en&oi=ao
+      href: https://scholar.google.com/citations?user=ySpnj0MAAAAJ&hl=en&oi=ao
     - icon: fa-linkedin fa-2x
       href: http://linkedin.com/in/lprisan
     - icon: fa-github fa-2x

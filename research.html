@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -22,9 +22,19 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -73,9 +83,7 @@ h6 {
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -89,7 +97,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -99,6 +106,9 @@ img {
 }
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -114,7 +124,6 @@ body {
   padding-top: 50px;
   margin-top: -50px;
 }
-
 .section h2 {
   padding-top: 50px;
   margin-top: -50px;
@@ -134,6 +143,43 @@ body {
 .section h6 {
   padding-top: 50px;
   margin-top: -50px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -155,19 +201,74 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -208,7 +309,7 @@ $(document).ready(function () {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://scholar.google.ch/citations?user=ySpnj0MAAAAJ&amp;hl=en&amp;oi=ao">
+  <a href="https://scholar.google.com/citations?user=ySpnj0MAAAAJ&amp;hl=en&amp;oi=ao">
     <span class="fa fa-book fa-2x"></span>
      
   </a>
@@ -246,11 +347,13 @@ list-style-type: none;
 }
 </style>
 
-<p>My research interests lie at the intersection of <strong>education and technology</strong>, with a dash of human-computer interaction. I am mainly interested in understanding what happens in the (physical) classroom, and in blended learning settings that combine face-to-face and online activities. With that understanding, my aim is to support teachers and learners with novel technologies that support them in their <strong>everyday</strong> learning. I’ve paid special attention to more complex, active methods of learning such as collaborative learning, or the provision of timely feedback through learning analytics. In order to do that, I have used a variety of technologies and methods, from very simple <a href="http://prolearning.realto.ch">questionnaires aimed at reflection</a>, to <a href="http://ilde.upf.edu">community-oriented platforms to support learning design by teachers</a>, <a href="http://chili.epfl.ch/page-110567-en.html">augmented paper tabletops</a>, or cutting-edge <a href="http://chili.epfl.ch/page-118328-en.html">mobile eye-tracking technology</a>.</p>
+<p>I am currently a Senior Research Fellow at the School of Educational Sciences in Tallinn University (Estonia), and member of the Center of Excellence in Educational Innovation at the same university. A telecom engineer by training, I later pursued a Ph.D. and an academic career in the fields of technology-enhaced learning (TEL), computer-supported collaborative learning (CSCL), learning design (LD) and learning analytics (LA).</p>
+<p>My research interests have always emphasized the <strong>naturalistic observation of teaching and learning practice</strong> using of a variety of methods, from unstructured qualitative observation and analysis, wearable sensors such as mobile eye-trackers. I have applied this variety of methods, for example, to understand teachers’ classroom orchestration – in what has been termed ‘multimodal teaching analytics’. I have also proposed and evaluated <strong>technologies to support educational practice</strong>, from learning design tools to help teachers implement their pedagogical designs, to reflection tools that enable practitioners to gather and visualize data about their daily practice. Recently, I am joining these two research strands (naturalistic observation and support of professional practice), along with new data collection and analysis tools (e.g., diaries and epistemic network analysis) to investigate the field of <strong>doctoral education</strong>, of which I am an avid practitioner and educator (e.g., through doctoral workshops and my blog, <a href="https://www.ahappyphd.org">A Happy PhD</a>.</p>
+<p>I have held positions in well-known labs in technology-enhanced learning in Spain, Switzerland and Estonia, including a prestigious Marie Curie Fellowship. Throughout my research career, I have always worked in <strong>multi-disciplinary</strong> teams involving educational scientists, psychologists, and computer scientists. Learning from these inter-disciplinary contacts, I have used (and devised) a variety of theoretical frameworks and analytical lenses, both qualitative <em>and</em> quantitative.</p>
 <div id="academic-roles" class="section level1">
 <h1>Academic Roles</h1>
 <ul>
-<li>2016 - 19
+<li>2016 - 20
 <ul>
 <li>Senior Research Fellow - Center of Excellence in Educational Innovation, School of Educational Sciences, <a href="http://tlu.ee">Tallinn University</a>, Estonia.</li>
 </ul></li>
@@ -282,6 +385,10 @@ list-style-type: none;
 <div id="awards-and-distinctions" class="section level1">
 <h1>Awards and Distinctions</h1>
 <ul>
+<li>2020
+<ul>
+<li>Estonian National Research Award (Social Sciences, Team Award), Estonian Academy of Sciences</li>
+</ul></li>
 <li>2016
 <ul>
 <li>Best Paper Award, European Conference on Technology-Enhanced Learning.</li>
@@ -317,133 +424,146 @@ list-style-type: none;
 </div>
 <div id="publications" class="section level1">
 <h1>Publications</h1>
+<p>(see <a href="https://scholar.google.com/citations?user=ySpnj0MAAAAJ&amp;hl=en&amp;oi=ao">my Google Scholar profile</a> for a more up-to-date version with citation counts)</p>
 <div id="section" class="section level2">
-<h2>2019</h2>
-<p>Prieto, L. P, M. J. RodrÃ­guez-Triana, R. MartÃ­nez-Maldonado, Y. Dimitriadis and D. GaÅ¡eviÄ‡ (2019). “Orchestrating learning analytics (OrLA): Supporting inter-stakeholder communication about adoption of learning analytics at the classroom level”. In: <em>Australasian Journal of Educational Technology</em> 35.4. Impact Factor: 1.396Q2, pp. 14-33. DOI: <a href="https://doi.org/https://doi.org/10.14742/ajet.4314">https://doi.org/10.14742/ajet.4314</a>.</p>
+<h2>2020</h2>
+<p>Chejara, P., L. P. Prieto, A. Ruiz-Calleja, M. J. Rodríguez-Triana, S. K. Shankar, and R. Kasepalu (2020). “Quantifying Collaboration Quality in Face-to-Face Classroom Settings Using MMLA”. In: <em>International Conference on Collaboration Technologies and Social Computing</em>. Springer. , pp. 159-166.</p>
+<p>Prieto, L. P., P. Magnuson, P. Dillenbourg, and M. Saar (2020). “Reflection for action: Designing tools to support teacher reflection on everyday evidence”. In: <em>Technology, Pedagogy and Education</em>, pp. 1-17. ISSN: 1747-5139. DOI: <a href="https://doi.org/10.1080%2F1475939X.2020.1762721">10.1080/1475939X.2020.1762721</a>.</p>
+<p>Prieto, L. P., M. J. Rodríguez-Triana, T. Ley, and B. Eagan (2020). “The Value of Epistemic Network Analysis in Single-Case Learning Analytics: A Case Study in Lifelong Learning”. In: <em>International Conference on Quantitative Ethnography (ICQE20)</em>.</p>
+<p>Rodriguez-Triana, M. J., L. Prieto, A. Holzer, and D. Gillet (2020). “Instruction, Student Engagement and Learning Outcomes: A Case Study Using Anonymous Social Media in a Face-to-face Classroom”. In: <em>IEEE Transactions on Learning Technologies</em>. DOI: <a href="https://doi.org/10.1109%2FTLT.2020.2995557">10.1109/TLT.2020.2995557</a>.</p>
+<p>Shankar, S. K., M. J. Rodríguez-Triana, A. Ruiz-Calleja, L. P. Prieto, P. Chejara, and A. Martínez-Monés (2020). “Multimodal Data Value Chain (M-DVC): A Conceptual Tool to Support the Development of Multimodal Learning Analytics Solutions”. In: <em>IEEE Revista Iberoamericana de Tecnologias del Aprendizaje</em> 15.2, pp. 113-122.</p>
+<p>Shankar, S. K., A. Ruiz-Calleja, L. P. Prieto, and M. J. Rodríguez-Triana (2020). “A Multimodal Learning Analytics Approach to Support Evidence-based Teaching and Learning Practices”. In: <em>2020 IEEE 20th International Conference on Advanced Learning Technologies (ICALT)</em>. IEEE. , pp. 381-383.</p>
 </div>
 <div id="section-1" class="section level2">
-<h2>2018</h2>
-<p>Dillenbourg, P, L. P. Prieto and J. K. Olsen (2018). “Classroom Orchestration”. In: <em>International Handbook of the Learning Sciences</em>. Routledge.</p>
-<p>HernÃ¡ndez-Leo, D, J. I. Asensio-PÃ©rez, M. Derntl, F. Pozzi, J. ChacÃ³n, L. P. Prieto and D. Persico (2018). “An Integrated Environment for Learning Design”. In: <em>Frontiers in ICT</em> 5, p. 9. ISSN: 2297-198X. DOI: <a href="https://doi.org/10.3389/fict.2018.00009">10.3389/fict.2018.00009</a>. URL: <a href="https://www.frontiersin.org/article/10.3389/fict.2018.00009" class="uri">https://www.frontiersin.org/article/10.3389/fict.2018.00009</a>.</p>
-<p>Martinez-Maldonado, R., L. P. Prieto, M. J. Rodríguez-Triana, V. Echeverria, E. Ruffaldi, D. Spikol, M. Cukurova, M. X. O. Mavrikis and M. Worsley (2018). “2nd CrossMMLA: Multimodal Learning Analytics Across Physical and Digital Spaces”. In: <em>Companion Proceedings of the Eighth International Learning Analytics &amp; Knowledge Conference (LAK ’18)</em>.</p>
-<p>Prieto, L. P., M. J. Rodríguez-Triana, R. Martinez-Maldonado, D. Gasevic and Y. Dimitriadis (2018). “Orchestrating Learning Analytics: Learning Analytics Adoption at the Classroom Level”. In: <em>Companion Proceedings of the Eighth International Learning Analytics &amp; Knowledge Conference (LAK ’18)</em>.</p>
-<p>Prieto, L, K. Sharma, Å. Kidzinski, M. Rodr'-Triana and P. Dillenbourg (2018). “Multimodal teaching analytics: Automated extraction of orchestration graphs from wearable sensor data”. In: <em>Journal of Computer Assisted Learning</em> 34.2. Impact Factor: 1.859Q2?, pp. 193-203. DOI: <a href="https://doi.org/10.1111/jcal.12232">10.1111/jcal.12232</a>.</p>
-<p>Rodríguez-Triana, M. J., L. P. Prieto, A. Martínez-Monés, J. I. Asensio-Pérez and Y. Dimitriadis (2018). “The teacher in the loop: customizing multimodal learning analytics for blended learning”. In: <em>Proceedings of the 8th International Conference on Learning Analytics and Knowledge</em>. ACM. , pp. 417-426.</p>
-<p>Rodríguez-Triana, M. J., L. P. Prieto, A. Martínez, J. I. Asensio-Pérez and Y. Dimitriadis (2018). “Monitoring Collaborative Learning Activities: Exploring the Differential Value of Collaborative Flow Patterns for Learning Analytics”. In: <em>Proceedings of the 18th IEEE International Conference on Advanced Learning Technologies (ICALT)</em>.</p>
-<p>Saar, M., L. P. Prieto, M. J. Rodríguez-Triana and M. Kusmin (2018). “Personalized, teacher-driven in-action data collection: technology design principles”. In: <em>Proceedings of the 18th IEEE International Conference on Advanced Learning Technologies (ICALT)</em>.</p>
-<p>Shankar, S. K., L. P. Prieto, M. J. Rodríguez-Triana and A. Ruiz-Calleja (2018). “A Review of Multimodal Learning Analytics Architectures”. In: <em>Proceedings of the 18th IEEE International Conference on Advanced Learning Technologies (ICALT)</em>.</p>
+<h2>2019</h2>
+<p>Chejara, P., L. P. Prieto, A. Ruiz Calleja, M. J. Rodríguez-Triana, and S. K. Shankar (2019). “Exploring the Triangulation of Dimensionality Reduction when Interpreting Multimodal Learning Data from Authentic Settings”. In: <em>Transforming Learning With Meaningful Technologies</em> , pp. 664-667.</p>
+<p>Prieto, L. P., M. J. RodrÃ­guez-Triana, R. MartÃ­nez-Maldonado, Y. Dimitriadis, and D. GaÅ¡eviÄ‡ (2019). “Orchestrating learning analytics (OrLA): Supporting inter-stakeholder communication about adoption of learning analytics at the classroom level”. In: <em>Australasian Journal of Educational Technology</em> 35.4.  Impact Factor: 1.396 (Q2), pp. 14-33. DOI: <a href="https://doi.org/https%3A%2F%2Fdoi.org%2F10.14742%2Fajet.4314">https://doi.org/10.14742/ajet.4314</a>.</p>
+<p>Rodriguez-Triana, M. J. and P. Chejara (2019). “An Architecture and Data Model to Process Multimodal Evidence of Learning”. In: <em>Advances in Web-Based Learning-ICWL 2019: 18th International Conference, Magdeburg, Germany, September 23-25, 2019, Proceedings</em>. Vol. 11841. Springer Nature. , p. 72.</p>
+<p>Rodriguez-Triana, M. J., L. P. Prieto, T. Ley, T. de Jong, and D. Gillet (2019). “Tracing Teacher Collaborative Learning and Innovation Adoption: a Case Study in an Inquiry Learning Platform”. In: <em>Proceedings of the 13th International Conference on Computer Supported Collaborative Learning (CSCL2019)</em>. ISLS, pp. 432-439. URL: <a href="https://www.cscl2019.com/upload/pdf/CSCL-2019-Volume-1.pdf">https://www.cscl2019.com/upload/pdf/CSCL-2019-Volume-1.pdf</a>.</p>
 </div>
 <div id="section-2" class="section level2">
-<h2>2017</h2>
-<p>Asensio-PÃ©rez, J. I, Y. Dimitriadis, F. Pozzi, D. HernÃ¡ndez-Leo, L. P. Prieto, D. Persico and S. L. VillagrÃ¡-Sobrino (2017). “Towards Teaching as Design: exploring the interplay between full-lifecycle Learning Design tooling and Teacher Professional Development”. In: <em>Computers &amp; Education</em> 114. Impact Factor: 3.819, pp. 92-116. DOI: <a href="https://doi.org/10.1016/j.compedu.2017.06.011">10.1016/j.compedu.2017.06.011</a>.</p>
-<p>Martinez-Maldonado, R, P. Goodyear, L. Carvalho, K. Thompson, D. Hernandez-Leo, Y. Dimitriadis, L. P. Prieto and D. Wardak (2017). “Supporting collaborative design activity in a multi-user digital design ecology”. In: <em>Computers in Human Behavior</em> 71. Impact Factor: 2.880, pp. 327-342. ISSN: 0747-5632. DOI: <a href="https://doi.org/10.1016/J.CHB.2017.01.055">10.1016/J.CHB.2017.01.055</a>. URL: <a href="http://www.sciencedirect.com/science/article/pii/S0747563217300675" class="uri">http://www.sciencedirect.com/science/article/pii/S0747563217300675</a>.</p>
-<p>Munoz-Cristobal, J. A, J. I. Asensio-Perez, A. Martinez-Mones, L. P. Prieto, I. M. Jorrin-Abellan and Y. Dimitriadis (2017). “Learning Buckets: Helping Teachers Introduce Flexibility in the Management of Learning Artifacts Across Spaces”. In: <em>IEEE Transactions on Learning Technologies</em> PP.99. Impact Factor: 1.283, pp. 1-1. ISSN: 1939-1382. DOI: <a href="https://doi.org/10.1109/TLT.2017.2693150">10.1109/TLT.2017.2693150</a>.</p>
-<p>Pozzi, F., A. Ceregini, F. M. Dagnino, D. Persico, L. P. Prieto and L. Sarti (2017). “Designing Collaborative Learning Activities with an Augmented LD Tool”. In: <em>2017 IEEE 17th International Conference on Advanced Learning Technologies (ICALT)</em>. IEEE, pp. 207-209. ISBN: 978-1-5386-3870-5. DOI: <a href="https://doi.org/10.1109/ICALT.2017.47">10.1109/ICALT.2017.47</a>. URL: <a href="http://ieeexplore.ieee.org/document/8001762/" class="uri">http://ieeexplore.ieee.org/document/8001762/</a>.</p>
-<p>Prieto, L. P, H. Alavi and H. Verma (2017). “Strong Technology-Enhanced Learning Concepts”. In: <em>Data Driven Approaches in Digital Education. EC-TEL 2017</em>. Springer, Cham, pp. 454-459. DOI: <a href="https://doi.org/10.1007/978-3-319-66610-5_42">10.1007/978-3-319-66610-5_42</a>. URL: <a href="http://link.springer.com/10.1007/978-3-319-66610-5_42" class="uri">http://link.springer.com/10.1007/978-3-319-66610-5_42</a>.</p>
-<p>Prieto, L. P., R. Martinez-Maldonado, D. Spikol, D. Hernandez-Leo, M. J. Rodr'iguez-Triana and X. Ochoa (2017a). <em>Editorial: Joint Proceedings of the Sixth Multimodal Learning Analytics (MMLA) Workshop and the Second Cross-LAK Workshop</em>. Ed. by L. P. Prieto, R. Martinez-Maldonado, D. Spikol, D. Hernandez-Leo, M. J. Rodr'iguez-Triana and X. Ochoa. Aachen. URL: <a href="http://ceur-ws.org/Vol-1828/#paper-01" class="uri">http://ceur-ws.org/Vol-1828/#paper-01</a>.</p>
-<p>Prieto, L. P., R. Martinez-Maldonado, D. Spikol, D. Hernandez-Leo, M. J. Rodr'iguez-Triana and X. Ochoa, ed. (2017b). <em>Joint Proceedings of the Sixth Multimodal Learning Analytics (MMLA) Workshop and the Second Cross-LAK Workshop (MMLA-CrossLAK)</em>. (Vancouver, Canada, mar. 14, 2017). CEUR Workshop Proceedings 1828. Aachen. URL: <a href="http://ceur-ws.org/Vol-1828/" class="uri">http://ceur-ws.org/Vol-1828/</a>.</p>
-<p>Prieto, L. P., M. J. Rodr'iguez-Triana, M. Kusmin and M. Laanpere (2017). <em>Smart School Multimodal Dataset and Challenges</em>. Ed. by L. P. Prieto, R. Martinez-Maldonado, D. Spikol, D. Hernandez-Leo, M. J. Rodr'iguez-Triana and X. Ochoa. Aachen. URL: <a href="http://ceur-ws.org/Vol-1828/#paper-08" class="uri">http://ceur-ws.org/Vol-1828/#paper-08</a>.</p>
-<p>Prieto, L. P. and M. J. RodrÃ­guez-Triana (2017). “The Art and Science of Learning Design (book review)”. In: <em>Italian Journal of Educational Technology</em> 24.3, pp. 192-193. ISSN: 2499-4324. DOI: <a href="https://doi.org/10.17471/2499-4324/933">10.17471/2499-4324/933</a>. URL: <a href="http://ijet.itd.cnr.it/article/view/933" class="uri">http://ijet.itd.cnr.it/article/view/933</a>.</p>
-<p>Prieto, L. P, K. Sharma, L. Kidzinski and P. Dillenbourg (2017). “Orchestration Load Indicators and Patterns: In-the-wild Studies Using Mobile Eye-tracking”. In: <em>IEEE Transactions on Learning Technologies</em> PP.99. Impact Factor: 1.283, pp. 1-1. ISSN: 1939-1382. DOI: <a href="https://doi.org/10.1109/TLT.2017.2690687">10.1109/TLT.2017.2690687</a>.</p>
-<p>Rodr'iguez-Triana, M. J, L. P. Prieto, A. Vozniuk, M. S. Boroujeni, B. A. Schwendimann, A. Holzer and D. Gillet (2017). “Monitoring, awareness and reflection in blended technology enhanced learning: a systematic review”. In: <em>International Journal of Technology Enhanced Learning</em> 9.2/3, p. 126. ISSN: 1753-5255. DOI: <a href="https://doi.org/10.1504/IJTEL.2017.084489">10.1504/IJTEL.2017.084489</a>. URL: <a href="http://www.inderscience.com/link.php?id=84489" class="uri">http://www.inderscience.com/link.php?id=84489</a>.</p>
-<p>Rodr'iguez-Triana, M. J., L. P. Prieto, A. Holzer and D. Gillet (2017). <em>The Multimodal Study of Blended Learning Using Mixed Sources: Dataset and Challenges of the SpeakUp Case</em>. Ed. by L. P. Prieto, R. Martinez-Maldonado, D. Spikol, D. Hernandez-Leo, M. J. Rodr'iguez-Triana and X. Ochoa. Aachen. URL: <a href="http://ceur-ws.org/Vol-1828/#paper-10" class="uri">http://ceur-ws.org/Vol-1828/#paper-10</a>.</p>
-<p>Ruiz-Calleja, A, L. P. Prieto, T. Ley, M. J. Rodr'iguez-Triana and S. Dennerlein (2017). “Learning Analytics for Professional and Workplace Learning: A Literature Review”. In: <em>Data Driven Approaches in Digital Education. EC-TEL 2017</em>. Springer, Cham, pp. 164-178. ISBN: 9783319666099. DOI: <a href="https://doi.org/10.1007/978-3-319-66610-5_13">10.1007/978-3-319-66610-5_13</a>. URL: <a href="http://link.springer.com/10.1007/978-3-319-66610-5_13" class="uri">http://link.springer.com/10.1007/978-3-319-66610-5_13</a>.</p>
-<p>Ruiz-Calleja, A., M. J. Rodriguez-Triana, L. P. Prieto, K. Poom-Valickis and T. Ley (2017). <em>Towards a Living Lab to support evidence-based educational research and innovation</em>. URL: <a href="http://ceur-ws.org/Vol-1925/paper04.pdf" class="uri">http://ceur-ws.org/Vol-1925/paper04.pdf</a>.</p>
-<p>Saar, M., M. Kusmin, M. Laanpere, L. P. Prieto and T. Ruutmann (2017). “Work in progress - Semantic annotations and teaching analytics on lecture videos in engineering education”. In: <em>2017 IEEE Global Engineering Education Conference (EDUCON)</em>. IEEE, pp. 1548-1551. ISBN: 978-1-5090-5467-1. DOI: <a href="https://doi.org/10.1109/EDUCON.2017.7943055">10.1109/EDUCON.2017.7943055</a>. URL: <a href="http://ieeexplore.ieee.org/document/7943055/" class="uri">http://ieeexplore.ieee.org/document/7943055/</a>.</p>
-<p>Schwendimann, B. A, M. J. RodrÃ­guez-Triana, A. Vozniuk, L. P. Prieto, M. Shirvani Boroujeni, A. Holzer, D. Gillet and P. Dillenbourg (2017). “Perceiving learning at a glance: A systematic literature review of learning dashboard research”. In: <em>IEEE Transactions on Learning Technologies</em> 10 (1). Impact Factor: 1.283, pp. 30-41. DOI: <a href="https://doi.org/10.1109/TLT.2016.2599522">10.1109/TLT.2016.2599522</a>. URL: <a href="http://ieeexplore.ieee.org/abstract/document/7542151/" class="uri">http://ieeexplore.ieee.org/abstract/document/7542151/</a>.</p>
-<p>Sharma, K., P. Jermann, P. Dillenbourg and L. Prieto (2017). “CSCL and Eye-Tracking: Experiences, Opportunities and Challenges”. In: <em>Proceedings of the 12th International Conference on Computer Supported Collaborative Learning (CSCL2017)</em>. Philadelphia, PA: ISLS, pp. 727-734. DOI: <a href="https://doi.org/https://dx.doi.org/10.22318/cscl2017.116">https://dx.doi.org/10.22318/cscl2017.116</a>. URL: <a href="https://repository.isls.org/handle/1/211" class="uri">https://repository.isls.org/handle/1/211</a>.</p>
-<p>Spikol, D., L. P. Prieto, M. J. Rodr'iguez-Triana, M. Worsley, X. Ochoa, M. Cukurova, B. Vogel, E. Ruffaldi and U. L. Ringtved (2017). “Current and future multimodal learning analytics data challenges”. In: <em>Proceedings of the Seventh International Learning Analytics &amp; Knowledge Conference on - LAK ’17</em>. New York, New York, USA: ACM Press, pp. 518-519. ISBN: 9781450348706. DOI: <a href="https://doi.org/10.1145/3027385.3029437">10.1145/3027385.3029437</a>. URL: <a href="http://dl.acm.org/citation.cfm?doid=3027385.3029437" class="uri">http://dl.acm.org/citation.cfm?doid=3027385.3029437</a>.</p>
+<h2>2018</h2>
+<p>Dillenbourg, P., L. P. Prieto, and J. K. Olsen (2018). “Classroom Orchestration”. In: <em>International Handbook of the Learning Sciences</em>. Routledge, pp. 180-190. ISBN: 9781315617572. DOI: <a href="https://doi.org/10.4324%2F9781315617572">10.4324/9781315617572</a>.</p>
+<p>HernÃ¡ndez-Leo, D., J. I. Asensio-PÃ©rez, M. Derntl, F. Pozzi, J. ChacÃ³n, L. P. Prieto, and D. Persico (2018). “An Integrated Environment for Learning Design”. In: <em>Frontiers in ICT</em> 5, p. 9. ISSN: 2297-198X. DOI: <a href="https://doi.org/10.3389%2Ffict.2018.00009">10.3389/fict.2018.00009</a>. URL: <a href="https://www.frontiersin.org/article/10.3389/fict.2018.00009">https://www.frontiersin.org/article/10.3389/fict.2018.00009</a>.</p>
+<p>Martinez-Maldonado, R., V. Echeverria, L. P. Prieto, M. J. Rodriguez-Triana, D. Spikol, M. Curukova, M. Mavrikis, X. Ochoa, and M. Worsley, ed. (2018). <em>Proceedings of the Second Multimodal Learning Analytics Across (Physical and Digital) Spaces (CrossMMLA2018)</em>. (Sydney, Australia, mar.. 06, 2018). CEUR Workshop Proceedings 2163. Aachen. URL: <a href="http://ceur-ws.org/Vol-2163/">http://ceur-ws.org/Vol-2163/</a>.</p>
+<p>Martinez-Maldonado, R., L. P. Prieto, M. J. Rodríguez-Triana, V. Echeverria, E. Ruffaldi, D. Spikol, M. Cukurova, M. X. O. Mavrikis, and M. Worsley (2018). “2nd CrossMMLA: Multimodal Learning Analytics Across Physical and Digital Spaces”. In: <em>Companion Proceedings of the Eighth International Learning Analytics &amp; Knowledge Conference (LAK ’18)</em>.</p>
+<p>Munoz-Cristobal, J. A., J. I. Asensio-Perez, A. Martinez-Mones, L. P. Prieto, I. M. Jorrin-Abellan, and Y. Dimitriadis (2018). “Learning Buckets: Helping Teachers Introduce Flexibility in the Management of Learning Artifacts Across Spaces”. In: <em>IEEE Transactions on Learning Technologies</em> 11.2. Impact Factor: 1.869 (Q2), pp. 203-215. ISSN: 1939-1382. DOI: <a href="https://doi.org/10.1109%2Ftlt.2017.2693150">10.1109/tlt.2017.2693150</a>.</p>
+<p>Prieto, L. P., M. J. Rodríguez-Triana, R. Martinez-Maldonado, D. Gasevic, and Y. Dimitriadis (2018). “Orchestrating Learning Analytics: Learning Analytics Adoption at the Classroom Level”. In: <em>Companion Proceedings of the Eighth International Learning Analytics &amp; Knowledge Conference (LAK ’18)</em>. URL: <a href="http://solaresearch.org/uploads/LAK18_Companion_Proceedings.pdf">http://solaresearch.org/uploads/LAK18_Companion_Proceedings.pdf</a>.</p>
+<p>Prieto, L. P., K. Sharma, L. Kidzinski, and P. Dillenbourg (2018). “Orchestration Load Indicators and Patterns: In-the-Wild Studies Using Mobile Eye-Tracking”. In: <em>IEEE Transactions on Learning Technologies</em> 11.2. Impact Factor: 1.869 (Q2), pp. 216-229. ISSN: 1939-1382. DOI: <a href="https://doi.org/10.1109%2Ftlt.2017.2690687">10.1109/tlt.2017.2690687</a>.</p>
+<p>Prieto, L., K. Sharma, Å. Kidzinski, M. Rodr'-Triana, and P. Dillenbourg (2018). “Multimodal teaching analytics: Automated extraction of orchestration graphs from wearable sensor data”. In: <em>Journal of Computer Assisted Learning</em> 34.2. Impact Factor: 1.859 (Q2), pp. 193-203. DOI: <a href="https://doi.org/10.1111%2Fjcal.12232">10.1111/jcal.12232</a>.</p>
+<p>RodrÃ­guez-Triana, M. J., L. P. Prieto, A. MartÃ­nez, J. I. Asensio-PÃ©rez, and Y. Dimitriadis (2018). “Monitoring Collaborative Learning Activities: Exploring the Differential Value of Collaborative Flow Patterns for Learning Analytics”. In: <em>Proceedings of the 18th IEEE International Conference on Advanced Learning Technologies (ICALT)</em>. DOI: <a href="https://doi.org/https%3A%2F%2Fdoi.org%2F10.1109%2FICALT.2018.00044">https://doi.org/10.1109/ICALT.2018.00044</a>. URL: <a href="https://ieeexplore.ieee.org/document/8433481">https://ieeexplore.ieee.org/document/8433481</a>.</p>
+<p>Rodríguez-Triana, M. J., L. P. Prieto, A. Martínez-Monés, J. I. Asensio-Pérez, and Y. Dimitriadis (2018). “The teacher in the loop: customizing multimodal learning analytics for blended learning”. In: <em>Proceedings of the 8th International Conference on Learning Analytics and Knowledge</em>. ACM. , pp. 417-426. DOI: <a href="https://doi.org/https%3A%2F%2Fdoi.org%2F10.1145%2F3170358.3170364">https://doi.org/10.1145/3170358.3170364</a>.</p>
+<p>Saar, M., L. P. Prieto, M. J. RodrÃ­guez-Triana, and M. Kusmin (2018). “Personalized, teacher-driven in-action data collection: technology design principles”. In: <em>Proceedings of the 18th IEEE International Conference on Advanced Learning Technologies (ICALT)</em>. DOI: <a href="https://doi.org/https%3A%2F%2Fdoi.org%2F10.1109%2FICALT.2018.00020">https://doi.org/10.1109/ICALT.2018.00020</a>. URL: <a href="https://ieeexplore.ieee.org/document/8433453">https://ieeexplore.ieee.org/document/8433453</a>.</p>
+<p>Shankar, S. K., L. P. Prieto, M. J. RodrÃ­guez-Triana, and A. Ruiz-Calleja (2018). “A Review of Multimodal Learning Analytics Architectures”. In: <em>Proceedings of the 18th IEEE International Conference on Advanced Learning Technologies (ICALT)</em>. DOI: <a href="https://doi.org/https%3A%2F%2Fdoi.org%2F10.1109%2FICALT.2018.00057">https://doi.org/10.1109/ICALT.2018.00057</a>.</p>
 </div>
 <div id="section-3" class="section level2">
-<h2>2016</h2>
-<p>Prieto, L. P. (2016). <em>Towards a Genomic Metaphor for Educational Technology Research</em>. Paper presented at the ``Connecting Learning Analytics and Design (CLAD2016)’’ workshop, co-located with the 11th European Conference on Technology-Enhanced Learning (EC-TEL 2016). Lyon, France.</p>
-<p>Prieto, L. P., K. Sharma, M. J. Rodríguez-Triana and P. Dillenbourg (2016). “Teaching Analytics: Towards Automatic Extraction of Orchestration Graphs Using Wearable Sensors”. In: <em>Proceedings of the 6th International Conference on Learning Analytics and Knowledge (LAK 2016)</em>. (Edimburgh, Scotland, UK). , pp. 148-157. DOI: <a href="https://doi.org/10.1145/2883851.2883927">10.1145/2883851.2883927</a>.</p>
-<p>Rodríguez-Triana, M. J., A. Holzer, L. P. Prieto and D. Gillet (2016). “Examining the effects of social media in co-located classrooms: A case study based on SpeakUp”. In: <em>Adaptive and Adaptable Learning: Proceedings of the 11th European Conference on Technology-Enhanced Learning (EC-TEL 2016)</em>. (Lyon, France). Best Paper Award. DOI: <a href="https://doi.org/10.1007/978-3-319-45153-4_19">10.1007/978-3-319-45153-4_19</a>. URL: <a href="http://dx.doi.org/10.1007/978-3-319-45153-4_19" class="uri">http://dx.doi.org/10.1007/978-3-319-45153-4_19</a>.</p>
-<p>Schwendimann, B. A., M. J. Rodríguez-Triana, A. Vozniuk, L. P. Prieto, M. Shirvani Boroujeni, A. Holzer, D. Gillet and P. Dillenbourg (2016). “Understanding learning at a glance: A systematic literature review of learning dashboards”. In: <em>Proceedings of the 6th International Conference on Learning Analytics and Knowledge (LAK 2016)</em>. (Edimburgh, Scotland, UK). , pp. 148-157.</p>
-<p>Wen, Y., L. P. Prieto and P. Dillenburg (2016). “Exploring classroom usage of a tangible user interface for Chinese character learning”. In: <em>Paper presented at The 9th International Conference &amp; Workshops on Technology &amp; Chinese Language Teaching in the 21st Century</em>. (Macau, China). , pp. 346-356.</p>
+<h2>2017</h2>
+<p>Asensio-Pérez, J. I., Y. Dimitriadis, F. Pozzi, D. Hernández-Leo, L. P. Prieto, D. Persico, and S. L. Villagrá-Sobrino (2017). “Towards Teaching as Design: exploring the interplay between full-lifecycle Learning Design tooling and Teacher Professional Development”. In: <em>Computers &amp; Education</em> 114. Impact Factor: 4.538 (Q1), pp. 92-116. ISSN: 0360-1315. DOI: <a href="https://doi.org/10.1016%2Fj.compedu.2017.06.011">10.1016/j.compedu.2017.06.011</a>.</p>
+<p>Martinez-Maldonado, R., P. Goodyear, L. Carvalho, K. Thompson, D. Hernandez-Leo, Y. Dimitriadis, L. P. Prieto, and D. Wardak (2017). “Supporting collaborative design activity in a multi-user digital design ecology”. In: <em>Computers in Human Behavior</em> 71.  Impact Factor: 3.536 (Q1), pp. 327-342. ISSN: 0747-5632. DOI: <a href="https://doi.org/10.1016%2FJ.CHB.2017.01.055">10.1016/J.CHB.2017.01.055</a>. URL: <a href="http://www.sciencedirect.com/science/article/pii/S0747563217300675">http://www.sciencedirect.com/science/article/pii/S0747563217300675</a>.</p>
+<p>Pozzi, F., A. Ceregini, F. M. Dagnino, D. Persico, L. P. Prieto, and L. Sarti (2017). “Designing Collaborative Learning Activities with an Augmented LD Tool”. In: <em>2017 IEEE 17th International Conference on Advanced Learning Technologies (ICALT)</em>. IEEE, pp. 207-209. ISBN: 978-1-5386-3870-5. DOI: <a href="https://doi.org/10.1109%2FICALT.2017.47">10.1109/ICALT.2017.47</a>. URL: <a href="http://ieeexplore.ieee.org/document/8001762/">http://ieeexplore.ieee.org/document/8001762/</a>.</p>
+<p>Prieto, L. P., H. Alavi, and H. Verma (2017). “Strong Technology-Enhanced Learning Concepts”. In: <em>Data Driven Approaches in Digital Education. EC-TEL 2017</em>. Springer, Cham, pp. 454-459. DOI: <a href="https://doi.org/10.1007%2F978-3-319-66610-5_42">10.1007/978-3-319-66610-5_42</a>. URL: <a href="http://link.springer.com/10.1007/978-3-319-66610-5_42">http://link.springer.com/10.1007/978-3-319-66610-5_42</a>.</p>
+<p>Prieto, L. P., R. Martinez-Maldonado, D. Spikol, D. Hernandez-Leo, M. J. Rodr'iguez-Triana, and X. Ochoa (2017a). <em>Editorial: Joint Proceedings of the Sixth Multimodal Learning Analytics (MMLA) Workshop and the Second Cross-LAK Workshop</em>. URL: <a href="http://ceur-ws.org/Vol-1828/#paper-01">http://ceur-ws.org/Vol-1828/#paper-01</a>.</p>
+<p>Prieto, L. P., R. Martinez-Maldonado, D. Spikol, D. Hernandez-Leo, M. J. Rodr'iguez-Triana, and X. Ochoa, ed. (2017b). <em>Joint Proceedings of the Sixth Multimodal Learning Analytics (MMLA) Workshop and the Second Cross-LAK Workshop (MMLA-CrossLAK)</em>. (Vancouver, Canada, mar.. 14, 2017). CEUR Workshop Proceedings 1828. Aachen. URL: <a href="http://ceur-ws.org/Vol-1828/">http://ceur-ws.org/Vol-1828/</a>.</p>
+<p>Prieto, L. P., M. J. Rodr'iguez-Triana, M. Kusmin, and M. Laanpere (2017). <em>Smart School Multimodal Dataset and Challenges</em>. URL: <a href="http://ceur-ws.org/Vol-1828/#paper-08">http://ceur-ws.org/Vol-1828/#paper-08</a>.</p>
+<p>Prieto, L. P. and M. J. RodrÃ­guez-Triana (2017). “The Art and Science of Learning Design (book review)”. In: <em>Italian Journal of Educational Technology</em> 24.3, pp. 192-193. ISSN: 2499-4324. DOI: <a href="https://doi.org/10.17471%2F2499-4324%2F933">10.17471/2499-4324/933</a>. URL: <a href="http://ijet.itd.cnr.it/article/view/933">http://ijet.itd.cnr.it/article/view/933</a>.</p>
+<p>Rodr'iguez-Triana, M. J., L. P. Prieto, A. Vozniuk, M. S. Boroujeni, B. A. Schwendimann, A. Holzer, and D. Gillet (2017). “Monitoring, awareness and reflection in blended technology enhanced learning: a systematic review”. In: <em>International Journal of Technology Enhanced Learning</em> 9.2/3, pp. 126-150. ISSN: 1753-5255. DOI: <a href="https://doi.org/10.1504%2FIJTEL.2017.084489">10.1504/IJTEL.2017.084489</a>. URL: <a href="http://www.inderscience.com/link.php?id=84489">http://www.inderscience.com/link.php?id=84489</a>.</p>
+<p>Rodr'iguez-Triana, M. J., L. P. Prieto, A. Holzer, and D. Gillet (2017). <em>The Multimodal Study of Blended Learning Using Mixed Sources: Dataset and Challenges of the SpeakUp Case</em>. URL: <a href="http://ceur-ws.org/Vol-1828/paper-10.pdf">http://ceur-ws.org/Vol-1828/paper-10.pdf</a>.</p>
+<p>Ruiz-Calleja, A., L. P. Prieto, T. Ley, M. J. Rodr'iguez-Triana, and S. Dennerlein (2017). “Learning Analytics for Professional and Workplace Learning: A Literature Review”. In: <em>Data Driven Approaches in Digital Education. EC-TEL 2017</em>. Springer, Cham, pp. 164-178. ISBN: 9783319666099. DOI: <a href="https://doi.org/10.1007%2F978-3-319-66610-5_13">10.1007/978-3-319-66610-5_13</a>. URL: <a href="http://link.springer.com/10.1007/978-3-319-66610-5_13">http://link.springer.com/10.1007/978-3-319-66610-5_13</a>.</p>
+<p>Ruiz-Calleja, A., M. J. Rodriguez-Triana, L. P. Prieto, K. Poom-Valickis, and T. Ley (2017). <em>Towards a Living Lab to support evidence-based educational research and innovation</em>. URL: <a href="http://ceur-ws.org/Vol-1925/paper04.pdf">http://ceur-ws.org/Vol-1925/paper04.pdf</a>.</p>
+<p>Saar, M., M. Kusmin, M. Laanpere, L. P. Prieto, and T. Ruutmann (2017). “Work in progress - Semantic annotations and teaching analytics on lecture videos in engineering education”. In: <em>2017 IEEE Global Engineering Education Conference (EDUCON)</em>. IEEE, pp. 1548-1551. ISBN: 978-1-5090-5467-1. DOI: <a href="https://doi.org/10.1109%2FEDUCON.2017.7943055">10.1109/EDUCON.2017.7943055</a>. URL: <a href="http://ieeexplore.ieee.org/document/7943055/">http://ieeexplore.ieee.org/document/7943055/</a>.</p>
+<p>Schwendimann, B. A., M. J. Rodríguez-Triana, A. Vozniuk, L. P. Prieto, M. Shirvani Boroujeni, A. Holzer, D. Gillet, and P. Dillenbourg (2017). “Perceiving learning at a glance: A systematic literature review of learning dashboard research”. In: <em>IEEE Transactions on Learning Technologies</em> 10 (1). Impact Factor: 1.869 (Q2), pp. 30-41. DOI: <a href="https://doi.org/10.1109%2FTLT.2016.2599522">10.1109/TLT.2016.2599522</a>. URL: <a href="http://ieeexplore.ieee.org/abstract/document/7542151/">http://ieeexplore.ieee.org/abstract/document/7542151/</a>.</p>
+<p>Sharma, K., P. Jermann, P. Dillenbourg, and L. Prieto (2017). “CSCL and Eye-Tracking: Experiences, Opportunities and Challenges”. In: <em>Proceedings of the 12th International Conference on Computer Supported Collaborative Learning (CSCL2017)</em>. Philadelphia, PA: ISLS, pp. 727-734. DOI: <a href="https://doi.org/https%3A%2F%2Fdx.doi.org%2F10.22318%2Fcscl2017.116">https://dx.doi.org/10.22318/cscl2017.116</a>. URL: <a href="https://repository.isls.org/handle/1/211">https://repository.isls.org/handle/1/211</a>.</p>
+<p>Spikol, D., L. P. Prieto, M. J. Rodr'iguez-Triana, M. Worsley, X. Ochoa, M. Cukurova, B. Vogel, E. Ruffaldi, and U. L. Ringtved (2017). “Current and future multimodal learning analytics data challenges”. In: <em>Proceedings of the Seventh International Learning Analytics &amp; Knowledge Conference on - LAK ’17</em>. New York, New York, USA: ACM Press, pp. 518-519. ISBN: 9781450348706. DOI: <a href="https://doi.org/10.1145%2F3027385.3029437">10.1145/3027385.3029437</a>. URL: <a href="http://dl.acm.org/citation.cfm?doid=3027385.3029437">http://dl.acm.org/citation.cfm?doid=3027385.3029437</a>.</p>
 </div>
 <div id="section-4" class="section level2">
-<h2>2015</h2>
-<p>Martinez-Maldonado, R., P. Goodyear, Y. Dimitriadis, K. Thompson, L. Carvalho, L. P. Prieto and M. Parisio (2015). “Learning about collaborative design for learning in a multi-surface design studio”. In: <em>Proceedings of the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015)</em>. (Gothenburg, Sweden). Vol. 1. , pp. 174-181.</p>
-<p>Muñoz-Cristóbal, J. A., J. I. Asensio-Pérez, A. Martínez-Monés, L. P. Prieto, I. M. Jorrín Abellán and Y. Dimitriadis (2015). “Bucket-Server: A system for including teacher-controlled flexibility in the management of learning artifacts in across-spaces learning situations”. In: <em>Proceedings of the 10th European Conference on Technology-Enhanced Learning (EC-TEL 2015)</em>. (Toledo, Spain). , pp. 518-521.</p>
-<p>MuÃ±oz-CristÃ³bal, J. A, I. M. JorrÃ­n-AbellÃ¡n, J. I. Asensio-PÃ©rez, A. MartÃ­nez-MonÃ©s, L. P. Prieto and Y. Dimitriadis (2015). “Supporting Teacher Orchestration in Ubiquitous Learning Environments: A Study in Primary Education”. In: <em>Learning Technologies, IEEE Transactions on</em> 8.1. Impact Factor: 1.283, pp. 83-97.</p>
-<p>MuÃ±oz-CristÃ³bal, J. A, L. P. Prieto, J. I. Asensio-PÃ©rez, A. MartÃ­nez-MonÃ©s, I. M. JorrÃ­n-AbellÃ¡n and Y. Dimitriadis (2015). “Coming down to Earth: Helping teachers use 3D virtual worlds in across-spaces learning situations”. In: <em>Journal of Educational Technology &amp; Society</em> 18.1. Impact Factor: 1.018, pp. 13-26.</p>
-<p>Prieto, L. P. (2015). <em>Classroom technology design guidelines: A focused survey</em>. Proceedings of the Orchestrated Collaborative Classroom Workshop 2015 (OCCW15), co-located with the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015). Gothenburg, Sweden. URL: <a href="http://ceur-ws.org/Vol-1411/#paper-03" class="uri">http://ceur-ws.org/Vol-1411/#paper-03</a>.</p>
-<p>Prieto, L. P., H. S. Alavi, K. Sharma, M. Raca and P. Dillenbourg (2015). <em>Wearable-enhanced classroom orchestration</em>. Paper presented at the ``Wearable-Enhanced Learning Design Challenge’’, co-located with the 10th European Conference on Technology-Enhanced Learning (EC-TEL 2015). Toledo, Spain.</p>
-<p>Prieto, L. P. and P. Dillenbourg (2015). <em>The Orchestration Matrix: A Tool to Design Heterogeneous Classroom Ecosystems</em>. Proceedings of the Orchestrated Collaborative Classroom Workshop 2015 (OCCW15), co-located with the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015). Gothenburg, Sweden. URL: <a href="http://ceur-ws.org/Vol-1411/#paper-05" class="uri">http://ceur-ws.org/Vol-1411/#paper-05</a>.</p>
-<p>Prieto, L. P, Y. Dimitriadis, J. I. Asensio-PÃ©rez and C. K. Looi (2015). “Orchestration in learning technology research: evaluation of a conceptual framework”. In: <em>Research in Learning Technology</em> 23.0. ISSN: 2156-7077. DOI: <a href="https://doi.org/http://dx.doi.org/10.3402/rlt.v23.28019">http://dx.doi.org/10.3402/rlt.v23.28019</a>. URL: <a href="http://www.researchinlearningtechnology.net/index.php/rlt/article/view/28019" class="uri">http://www.researchinlearningtechnology.net/index.php/rlt/article/view/28019</a>.</p>
-<p>Prieto, L. P., Y. Dimitriadis, A. Harrer, M. Milrad, M. Nussbaum and J. D. Slotta (2015). “The orchestrated collaborative classroom: Designing and making sense of heterogeneous ecologies of teaching and learning resources”. In: <em>Proceedings of the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015)</em>. (Gothenburg, Sweden). Vol. 2. , pp. 880-884.</p>
-<p>Prieto, L. P., Y. Dimitriadis, A. Harrer, M. Milrad and J. D. Slotta, ed. (2015a). <em>Proceedings of the Orchestrated Collaborative Classroom Workshop 2015 (OCCW15)</em>. (Gothenburg, Sweden, jun. 07, 2015). CEUR Workshop Proceedings 1411. Aachen. URL: <a href="http://ceur-ws.org/Vol-1411/" class="uri">http://ceur-ws.org/Vol-1411/</a>.</p>
-<p>Prieto, L. P., Y. Dimitriadis, A. Harrer, M. Milrad and J. D. Slotta, ed. (2015b). <em>Proceedings of the Proceedings of the Orchestrated Collaborative Classroom Workshop 2015 (OCCW15)</em>. (Gothenburg, Sweden, jun. 07, 2015). CEUR Workshop Proceedings 1411. Aachen. URL: <a href="http://ceur-ws.org/Vol-1411/" class="uri">http://ceur-ws.org/Vol-1411/</a>.</p>
-<p>Prieto, L. P. and K. Sharma (2015). <em>Studying orchestration affect using physiological measures</em>. Paper presented at the ``Motivational and Affective aspects of Technology-Enhanced Learning’’ (MATEL 2015) workshop, co-located with the 10th European Conference on Technology-Enhanced Learning (EC-TEL 2015). Toledo, Spain.</p>
-<p>Prieto, L. P., K. Sharma and P. Dillenbourg (2015). “Studying teacher orchestration load in technology-enhanced classrooms: A mixed-method approach and case study”. In: <em>Proceedings of the 10th European Conference on Technology-Enhanced Learning (EC-TEL 2015)</em>. (Toledo, Spain).</p>
-<p>Prieto, L. P., K. Sharma, Y. Wen and P. Dillenbourg (2015). “The burden of facilitating collaboration: Towards estimation of teacher orchestration load using eye-tracking measures”. In: <em>Proceedings of the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015)</em>. (Gothenburg, Sweden). Vol. 1. , pp. 212-219.</p>
-<p>Wen, Y., L. P. Prieto and P. Dillenbourg (2015). “Paper-based tabletop application for collaborative Chinese character learning”. In: <em>Proceedings of the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015)</em>. (Gothenburg, Sweden). Vol. 2. , pp. 665-666.</p>
+<h2>2016</h2>
+<p>Prieto, L. P. (2016). <em>Towards a Genomic Metaphor for Educational Technology Research</em>. Paper presented at the ``Connecting Learning Analytics and Design (CLAD2016)’’ workshop, co-located with the 11th European Conference on Technology-Enhanced Learning (EC-TEL 2016). Lyon, France.</p>
+<p>Prieto, L. P., K. Sharma, M. J. Rodríguez-Triana, and P. Dillenbourg (2016). “Teaching Analytics: Towards Automatic Extraction of Orchestration Graphs Using Wearable Sensors”. In: <em>Proceedings of the 6th International Conference on Learning Analytics and Knowledge (LAK 2016)</em>. (Edimburgh, Scotland, UK). , pp. 148-157. DOI: <a href="https://doi.org/10.1145%2F2883851.2883927">10.1145/2883851.2883927</a>.</p>
+<p>Rodríguez-Triana, M. J., A. Holzer, L. P. Prieto, and D. Gillet (2016). “Examining the effects of social media in co-located classrooms: A case study based on SpeakUp”. In: <em>Adaptive and Adaptable Learning: Proceedings of the 11th European Conference on Technology-Enhanced Learning (EC-TEL 2016)</em>. (Lyon, France). Best Paper Award. DOI: <a href="https://doi.org/10.1007%2F978-3-319-45153-4_19">10.1007/978-3-319-45153-4_19</a>. URL: <a href="http://dx.doi.org/10.1007/978-3-319-45153-4_19">http://dx.doi.org/10.1007/978-3-319-45153-4_19</a>.</p>
+<p>Schwendimann, B. A., M. J. Rodríguez-Triana, A. Vozniuk, L. P. Prieto, M. Shirvani Boroujeni, A. Holzer, D. Gillet, and P. Dillenbourg (2016). “Understanding learning at a glance: A systematic literature review of learning dashboards”. In: <em>Proceedings of the 6th International Conference on Learning Analytics and Knowledge (LAK 2016)</em>. (Edimburgh, Scotland, UK). , pp. 148-157. DOI: <a href="https://doi.org/https%3A%2F%2Fdoi.org%2F10.1145%2F2883851.2883930">https://doi.org/10.1145/2883851.2883930</a>.</p>
+<p>Wen, Y., L. P. Prieto, and P. Dillenburg (2016). “Exploring classroom usage of a tangible user interface for Chinese character learning”. In: <em>Paper presented at The 9th International Conference &amp; Workshops on Technology &amp; Chinese Language Teaching in the 21st Century</em>. (Macau, China). , pp. 346-356.</p>
 </div>
 <div id="section-5" class="section level2">
-<h2>2014</h2>
-<p>Asensio-Pérez, J. I., Y. Dimitriadis, L. P. Prieto, D. Hernández-Leo and Y. Mor (2014). “From idea to VLE in half a day: METIS approach and tools for learning co-design”. In: <em>Proceedings of the 2nd International Conference on Technological Ecosystems for Enhancing Multiculturality (TEEM ’14)</em>. (Salamanca, Spain). , pp. 741-745.</p>
-<p>Caballero, D., Y. Wen, L. P. Prieto and P. Dillenbourg (2014). “Single locus of control in a tangible paper-based tabletop application: An exploratory study”. In: <em>Proceedings of the 9th ACM International Conference on Interactive Tabletops and Surfaces (ITS ’14)</em>. (Dresden, Germany). , pp. 351-356.</p>
-<p>Hernández-Leo, D., J. I. Asensio-Pérez, M. Derntl, L. P. Prieto and J. Chacón (2014). “ILDE: Community Environment for Conceptualizing, Authoring and Deploying Learning Activities”. In: <em>Proceedings of the 9th European Conference on Technology Enhanced Learning (EC-TEL 2014)</em>. (Graz, Austria). , pp. 490-493.</p>
-<p>MuÃ±oz-CristÃ³bal, J. A, L. P. Prieto, J. I. Asensio-PÃ©rez, A. MartÃ­nez-MonÃ©s, I. M. JorrÃ­n-AbellÃ¡n and Y. Dimitriadis (2014). “Deploying learning designs across physical and web spaces: Making pervasive learning affordable for teachers”. In: <em>Pervasive and Mobile Computing</em> 14. Impact Factor: 1.667, pp. 31-46.</p>
-<p>Prieto, L. P, J. I. Asensio-PÃ©rez, J. A. MuÃ±oz-CristÃ³bal, I. M. JorrÃ­n-AbellÃ¡n, Y. Dimitriadis and E. GÃ³mez-SÃ¡nchez (2014). “Supporting orchestration of CSCL scenarios in web-based Distributed Learning Environments”. In: <em>Computers &amp; Education</em> 73. Impact Factor: 2.556, pp. 9-25.</p>
-<p>Prieto, L. P, Y. Dimitriadis and J. I. Asensio-PÃ©rez (2014). “Orchestrating evaluation of complex educational technologies: A case study of a CSCL system”. In: <em>Qualitative Research in Education</em> 3.2, pp. 175-205.</p>
-<p>Prieto, L. P, P. Tchounikine, J. I. Asensio-PÃ©rez, P. Sobreira and Y. Dimitriadis (2014). “Exploring teachers’ perceptions on different CSCL script editing tools”. In: <em>Computers &amp; Education</em> 78. Impact Factor: 2.556, pp. 383-396.</p>
-<p>Prieto, L. P, Y. Wen, D. Caballero and P. Dillenbourg (2014). “Review of augmented paper systems in education: An orchestration perspective”. In: <em>Journal of Educational Technology &amp; Society</em> 17.4. Impact Factor: 1.018, pp. 169-185.</p>
-<p>Prieto, L. P., Y. Wen, D. Caballero, K. Sharma and P. Dillenbourg (2014). “Studying teacher cognitive load in multi-tabletop classrooms using mobile eye-tracking”. In: <em>Proceedings of the 9th ACM International Conference on Interactive Tabletops and Surfaces (ITS ’14)</em>. (Dresden, Germany). , pp. 339-344.</p>
+<h2>2015</h2>
+<p>Martinez-Maldonado, R., P. Goodyear, Y. Dimitriadis, K. Thompson, L. Carvalho, L. P. Prieto, and M. Parisio (2015). “Learning about collaborative design for learning in a multi-surface design studio”. In: <em>Proceedings of the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015)</em>. (Gothenburg, Sweden). Vol. 1. , pp. 174-181.</p>
+<p>Muñoz-Cristóbal, J. A., J. I. Asensio-Pérez, A. Martínez-Monés, L. P. Prieto, I. M. Jorrín Abellán, and Y. Dimitriadis (2015). “Bucket-Server: A system for including teacher-controlled flexibility in the management of learning artifacts in across-spaces learning situations”. In: <em>Proceedings of the 10th European Conference on Technology-Enhanced Learning (EC-TEL 2015)</em>. (Toledo, Spain). , pp. 518-521. DOI: <a href="https://doi.org/https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-319-24258-3_50">https://doi.org/10.1007/978-3-319-24258-3_50</a>.</p>
+<p>Muñoz-Cristóbal, J. A., I. M. Jorrín-Abellán, J. I. Asensio-Pérez, A. Martínez-Monés, L. P. Prieto, and Y. Dimitriadis (2015). “Supporting Teacher Orchestration in Ubiquitous Learning Environments: A Study in Primary Education”. In: <em>Learning Technologies, IEEE Transactions on</em> 8.1. Impact Factor: 1.129 (Q2), pp. 83-97.</p>
+<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, A. Martínez-Monés, I. M. Jorrín-Abellán, and Y. Dimitriadis (2015). “Coming down to Earth: Helping teachers use 3D virtual worlds in across-spaces learning situations”. In: <em>Journal of Educational Technology &amp; Society</em> 18.1. Impact Factor: 1.104 (Q2), pp. 13-26.</p>
+<p>Prieto, L. P. (2015). <em>Classroom technology design guidelines: A focused survey</em>. Proceedings of the Orchestrated Collaborative Classroom Workshop 2015 (OCCW15), co-located with the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015). Gothenburg, Sweden. URL: <a href="http://ceur-ws.org/Vol-1411/#paper-03">http://ceur-ws.org/Vol-1411/#paper-03</a>.</p>
+<p>Prieto, L. P., H. S. Alavi, K. Sharma, M. Raca, and P. Dillenbourg (2015). <em>Wearable-enhanced classroom orchestration</em>. Paper presented at the ``Wearable-Enhanced Learning Design Challenge’’, co-located with the 10th European Conference on Technology-Enhanced Learning (EC-TEL 2015). Toledo, Spain.</p>
+<p>Prieto, L. P. and P. Dillenbourg (2015). <em>The Orchestration Matrix: A Tool to Design Heterogeneous Classroom Ecosystems</em>. Proceedings of the Orchestrated Collaborative Classroom Workshop 2015 (OCCW15), co-located with the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015). Gothenburg, Sweden. URL: <a href="http://ceur-ws.org/Vol-1411/#paper-05">http://ceur-ws.org/Vol-1411/#paper-05</a>.</p>
+<p>Prieto, L. P., Y. Dimitriadis, J. I. Asensio-PÃ©rez, and C. K. Looi (2015). “Orchestration in learning technology research: evaluation of a conceptual framework”. In: <em>Research in Learning Technology</em> 23.0. ISSN: 2156-7077. DOI: <a href="https://doi.org/http%3A%2F%2Fdx.doi.org%2F10.3402%2Frlt.v23.28019">http://dx.doi.org/10.3402/rlt.v23.28019</a>. URL: <a href="http://www.researchinlearningtechnology.net/index.php/rlt/article/view/28019">http://www.researchinlearningtechnology.net/index.php/rlt/article/view/28019</a>.</p>
+<p>Prieto, L. P., Y. Dimitriadis, A. Harrer, M. Milrad, M. Nussbaum, and J. D. Slotta (2015). “The orchestrated collaborative classroom: Designing and making sense of heterogeneous ecologies of teaching and learning resources”. In: <em>Proceedings of the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015)</em>. (Gothenburg, Sweden). Vol. 2. , pp. 880-884.</p>
+<p>Prieto, L. P., Y. Dimitriadis, A. Harrer, M. Milrad, and J. D. Slotta, ed. (2015). <em>Proceedings of the Orchestrated Collaborative Classroom Workshop 2015 (OCCW15)</em>. (Gothenburg, Sweden, jun.. 07, 2015). CEUR Workshop Proceedings 1411. Aachen. URL: <a href="http://ceur-ws.org/Vol-1411/">http://ceur-ws.org/Vol-1411/</a>.</p>
+<p>Prieto, L. P. and K. Sharma (2015). <em>Studying orchestration affect using physiological measures</em>. Paper presented at the ``Motivational and Affective aspects of Technology-Enhanced Learning’’ (MATEL 2015) workshop, co-located with the 10th European Conference on Technology-Enhanced Learning (EC-TEL 2015). Toledo, Spain.</p>
+<p>Prieto, L. P., K. Sharma, and P. Dillenbourg (2015). “Studying teacher orchestration load in technology-enhanced classrooms: A mixed-method approach and case study”. In: <em>Proceedings of the 10th European Conference on Technology-Enhanced Learning (EC-TEL 2015)</em>. (Toledo, Spain). DOI: <a href="https://doi.org/https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-319-24258-3_20">https://doi.org/10.1007/978-3-319-24258-3_20</a>.</p>
+<p>Prieto, L. P., K. Sharma, Y. Wen, and P. Dillenbourg (2015). “The burden of facilitating collaboration: Towards estimation of teacher orchestration load using eye-tracking measures”. In: <em>Proceedings of the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015)</em>. (Gothenburg, Sweden). Vol. 1. , pp. 212-219.</p>
+<p>Wen, Y., L. P. Prieto, and P. Dillenbourg (2015). “Paper-based tabletop application for collaborative Chinese character learning”. In: <em>Proceedings of the 11th International Conference on Computer-Supported Collaborative Learning (CSCL 2015)</em>. (Gothenburg, Sweden). Vol. 2. , pp. 665-666.</p>
 </div>
 <div id="section-6" class="section level2">
-<h2>2013</h2>
-<p>Dimitriadis, Y, L. P. Prieto and J. I. Asensio-PÃ©rez (2013). “The role of design and enactment patterns in orchestration: Helping to integrate technology in blended classroom ecosystems”. In: <em>Computers &amp; Education</em> 69. Impact Factor: 2.630, pp. 496-499.</p>
-<p>Hernández-Leo, D., J. Chacón, L. P. Prieto, J. I. Asensio-Pérez and M. Derntl (2013). “Towards an integrated learning design environment”. In: <em>Proceedings of the 8th European Conference on Technology Enhanced Learning (EC-TEL 2013)</em>. (Paphos, Cyprus). , pp. 448-453.</p>
-<p>Martinez-Maldonado, R., Y. Dimitriadis, A. Clayphan, J. A. Muñoz-Cristóbal, L. P. Prieto, M. J. Rodríguez-Triana and J. Kay (2013). “Integrating orchestration of ubiquitous and pervasive learning environments”. In: <em>Proceedings of the 25th Australian Computer-Human Interaction Conference (OzCHI): Augmentation, Application, Innovation, Collaboration</em>. (Adelaide, Australia). , pp. 189-192.</p>
-<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, I. M. Jorrín-Abellán, A. Martínez-Monés and Y. Dimitriadis (2013a). “GLUEPS-AR: A System for the Orchestration of Learning Situations across Spaces Using Augmented Reality”. In: <em>Proceedings of the 8th European Conference on Technology Enhanced Learning (EC-TEL 2013)</em>. Paphos, Cyprus, pp. 565-568.</p>
-<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, I. M. Jorrín-Abellán, A. Martínez-Monés and Y. Dimitriadis (2013b). “Sharing the burden: Introducing student-centered orchestration in across-spaces learning situations”. In: <em>Proceedings of the 8th European Conference on Technology Enhanced Learning (EC-TEL 2013)</em>. (Paphos, Cyprus). , pp. 621-622.</p>
-<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, A. Martínez-Monés, I. M. Jorrín-Abellán and Y. Dimitriadis (2013). <em>Realidad aumentada en educación</em>. Paper presented at the XXI University Conference on Educational Technology (JUTE 2013). Valladolid, Spain.</p>
-<p>Prieto, L. P, J. I. Asensio-PÃ©rez, J. A. MuÃ±oz-CristÃ³bal, Y. Dimitriadis, I. M. JorrÃ­n-AbellÃ¡n and E. GÃ³mez-SÃ¡nchez (2013). “Enabling teachers to deploy CSCL designs across distributed learning environments”. In: <em>Learning Technologies, IEEE Transactions on</em> 6.4. Impact Factor: 1.22, pp. 324-336.</p>
-<p>Prieto, L. P., Y. Dimitriadis and J. I. Asensio-Pérez (2013). <em>Orchestration in Technology-Enhanced Learning: a banner and a conceptual framework</em>. Paper presented at the XXI University Conference on Educational Technology (JUTE 2013). Valladolid, Spain.</p>
-<p>Prieto, L. P, Y. Dimitriadis, B. Craft, M. Derntl, V. Emin, M. Katsamani, D. Laurillard, E. Masterman, S. Retalis and E. Villasclaras (2013). “Learning design Rashomon II: exploring one lesson through multiple tools”. In: <em>Research in Learning Technology</em> 21.</p>
-<p>Prieto, L. P., J. A. Muñoz-Cristóbal, J. I. Asensio-Pérez and Y. Dimitriadis (2013). <em>Flexible CSCL scripting using paper, generic Augmented Reality browsers and GLUEPS-AR</em>. Paper presented at the Workshop on Human-Computer Interaction and the Learning Sciences, 10th International Conference on Computer Supported Collaborative Learning (CSCL 2013). Madison, WI.</p>
-<p>Prieto, L. P., S. Villagrá-Sobrino, Y. Dimitriadis, J. I. Asensio-Pérez and I. M. Jorrín-Abellán (2013). “Fostering CSCL Adoption: An Approach to Professional Development Focused on Orchestration”. In: <em>Proceedings of the 10th International Conference on Computer-Supported Collaborative Learning (CSCL 2013)</em>. (Madison, WI). Vol. 1. , pp. 383-390.</p>
-<p>Prieto, L. P, S. VillagrÃ¡-Sobrino, Y. Dimitriadis and I. M. JorrÃ­n-AbellÃ¡n (2013). “Orchestrating classroom CSCL: a multi-level pattern approach for design and enactment”. In: <em>Handbook of Design in Educational Technology</em>. Ed. by R. Luckin, P. Goodyear, B. Grabowski, S. Puntambekar, J. Underwood and N. Winters. Routledge, pp. 112-123.</p>
-<p>Rodríguez-Triana, M. J., L. P. Prieto, S. Villagrá-Sobrino and A. Martínez-Monés (2013). <em>Combinando guiado y monitorización en actividades colaborativas soportadas por ordenador: un estudio de caso en el grado de Maestro/a en Educación Primaria de la Universidad de Valladolid</em>. Paper presented at the XXI University Conference on Educational Technology (JUTE 2013). Valladolid, Spain.</p>
+<h2>2014</h2>
+<p>Asensio-Pérez, J. I., Y. Dimitriadis, L. P. Prieto, D. Hernández-Leo, and Y. Mor (2014). “From idea to VLE in half a day: METIS approach and tools for learning co-design”. In: <em>Proceedings of the 2nd International Conference on Technological Ecosystems for Enhancing Multiculturality (TEEM ’14)</em>. (Salamanca, Spain). , pp. 741-745.</p>
+<p>Caballero, D., Y. Wen, L. P. Prieto, and P. Dillenbourg (2014). “Single locus of control in a tangible paper-based tabletop application: An exploratory study”. In: <em>Proceedings of the 9th ACM International Conference on Interactive Tabletops and Surfaces (ITS ’14)</em>. (Dresden, Germany). , pp. 351-356.</p>
+<p>Hernández-Leo, D., J. I. Asensio-Pérez, M. Derntl, L. P. Prieto, and J. Chacón (2014). “ILDE: Community Environment for Conceptualizing, Authoring and Deploying Learning Activities”. In: <em>Proceedings of the 9th European Conference on Technology Enhanced Learning (EC-TEL 2014)</em>. (Graz, Austria). , pp. 490-493.</p>
+<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, A. Martínez-Monés, I. M. Jorrín-Abellán, and Y. Dimitriadis (2014). “Deploying learning designs across physical and web spaces: Making pervasive learning affordable for teachers”. In: <em>Pervasive and Mobile Computing</em> 14. Impact Factor: 2.079 (Q1), pp. 31-46.</p>
+<p>Prieto, L. P., J. I. Asensio-Pérez, J. A. Muñoz-Cristóbal, I. M. Jorrín-Abellán, Y. Dimitriadis, and E. Gómez-Sánchez (2014). “Supporting orchestration of CSCL scenarios in web-based Distributed Learning Environments”. In: <em>Computers &amp; Education</em> 73. Impact Factor: 2.556 (Q1), pp. 9-25.</p>
+<p>Prieto, L. P., Y. Dimitriadis, and J. I. Asensio-Pérez (2014). “Orchestrating evaluation of complex educational technologies: A case study of a CSCL system”. In: <em>Qualitative Research in Education</em> 3.2, pp. 175-205.</p>
+<p>Prieto, L. P., P. Tchounikine, J. I. Asensio-Pérez, P. Sobreira, and Y. Dimitriadis (2014). “Exploring teachers’ perceptions on different CSCL script editing tools”. In: <em>Computers &amp; Education</em> 78. Impact Factor: 2.556 (Q1), pp. 383-396.</p>
+<p>Prieto, L. P., Y. Wen, D. Caballero, and P. Dillenbourg (2014). “Review of augmented paper systems in education: An orchestration perspective”. In: <em>Journal of Educational Technology &amp; Society</em> 17.4. Impact Factor: 1.018 (Q2), pp. 169-185.</p>
+<p>Prieto, L. P., Y. Wen, D. Caballero, K. Sharma, and P. Dillenbourg (2014). “Studying teacher cognitive load in multi-tabletop classrooms using mobile eye-tracking”. In: <em>Proceedings of the 9th ACM International Conference on Interactive Tabletops and Surfaces (ITS ’14)</em>. (Dresden, Germany). , pp. 339-344.</p>
 </div>
 <div id="section-7" class="section level2">
-<h2>2012</h2>
-<p>Alario-Hoyos, C., J. A. Muñoz-Cristóbal, L. P. Prieto, M. L. Bote-Lorenzo, J. I. Asensio-Pérez, E. Gómez-Sánchez, G. Vega-Gorgojo and Y. Dimitriadis (2012). “GLUE!-GLUE!-PS: An approach to deploy non-trivial collaborative learning situations that require the integration of external tools in VLEs”. In: <em>Proceedings of the 1st Moodle Research Conference</em>. (Heraklion, Greece). , pp. 77-85.</p>
-<p>Karakostas, A., L. P. Prieto and Y. Dimitriadis (2012). “Opportunities and challenges for adaptive collaborative support in Distributed Learning Environments: Evaluating the GLUE! suite of tools”. In: <em>Proceedings of the 12th International Conference on Advanced Learning Technologies (ICALT 2012)</em>. (Rome, Italy). , pp. 446-450.</p>
-<p>Muñoz-Cristóbal, J. A., J. I. Asensio-Pérez, L. P. Prieto, I. M. Jorrín-Abellán, Y. Dimitriadis and A. Martínez-Monés (2012). <em>Helping educators to deploy CSCL scripts into mainstream VLEs that integrate third-party Web and Augmented Reality Tools</em>. Paper presented at the Workshop on Digital Ecosystems for Collaborative Learning 2012 held in conjunction with the International Conference of the Learning Sciences (ICLS 2012). Sydney, Australia.</p>
-<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, I. M. Jorrín-Abellán and Y. Dimitriadis (2012a). “Lost in translation from abstract learning design to ICT implementation: a study using Moodle for CSCL”. In: <em>Proceedings of the European Conference on Technology-Enhanced Learning (EC-TEL 2012)</em>. (Saarbrücken, Germany). , pp. 264-277.</p>
-<p>MuÃ±oz-CristÃ³bal, J. A, L. P. Prieto, J. I. Asensio-PÃ©rez, I. M. JorrÃ­n-AbellÃ¡n and Y. Dimitriadis (2012b). “Orchestrating TEL situations across spaces using Augmented Reality through GLUE!-PS AR”. In: <em>Bulletin of the IEEE Technical Committee on Learning Technology</em> 14.4, pp. 14-16.</p>
-<p>Prieto, L. P. (2012). “Supporting orchestration of blended CSCL scenarios in Distributed Learning Environments”. Ph.D. Thesis. School of Telecommunications Engineering, University of Valladolid, Spain. URL: <a href="https://www.dropbox.com/s/r1ky2t5igyuyx7u/20120903_Prieto_PhDThesisDissertation.pdf?dl=1" class="uri">https://www.dropbox.com/s/r1ky2t5igyuyx7u/20120903_Prieto_PhDThesisDissertation.pdf?dl=1</a>.</p>
-<p>Prieto, L. P., J. A. Muñoz-Cristóbal, J. I. Asensio-Pérez and Y. Dimitriadis (2012). “Making learning designs happen in distributed learning environments with GLUE!-PS”. In: <em>Proceedings of the European Conference on Technology-Enhanced Learning (EC-TEL 2012)</em>. (Saarbrücken, Germany). , pp. 489-494.</p>
+<h2>2013</h2>
+<p>Dimitriadis, Y., L. P. Prieto, and J. I. Asensio-Pérez (2013). “The role of design and enactment patterns in orchestration: Helping to integrate technology in blended classroom ecosystems”. In: <em>Computers &amp; Education</em> 69. Impact Factor: 2.630 (Q1), pp. 496-499.</p>
+<p>Hernández-Leo, D., J. Chacón, L. P. Prieto, J. I. Asensio-Pérez, and M. Derntl (2013). “Towards an integrated learning design environment”. In: <em>Proceedings of the 8th European Conference on Technology Enhanced Learning (EC-TEL 2013)</em>. (Paphos, Cyprus). , pp. 448-453.</p>
+<p>Martinez-Maldonado, R., Y. Dimitriadis, A. Clayphan, J. A. Muñoz-Cristóbal, L. P. Prieto, M. J. Rodríguez-Triana, and J. Kay (2013). “Integrating orchestration of ubiquitous and pervasive learning environments”. In: <em>Proceedings of the 25th Australian Computer-Human Interaction Conference (OzCHI): Augmentation, Application, Innovation, Collaboration</em>. (Adelaide, Australia). , pp. 189-192.</p>
+<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, I. M. Jorrín-Abellán, A. Martínez-Monés, and Y. Dimitriadis (2013a). “GLUEPS-AR: A System for the Orchestration of Learning Situations across Spaces Using Augmented Reality”. In: <em>Proceedings of the 8th European Conference on Technology Enhanced Learning (EC-TEL 2013)</em>. Paphos, Cyprus, pp. 565-568.</p>
+<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, I. M. Jorrín-Abellán, A. Martínez-Monés, and Y. Dimitriadis (2013b). “Sharing the burden: Introducing student-centered orchestration in across-spaces learning situations”. In: <em>Proceedings of the 8th European Conference on Technology Enhanced Learning (EC-TEL 2013)</em>. (Paphos, Cyprus). , pp. 621-622.</p>
+<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, A. Martínez-Monés, I. M. Jorrín-Abellán, and Y. Dimitriadis (2013). <em>Realidad aumentada en educación</em>. Paper presented at the XXI University Conference on Educational Technology (JUTE 2013). Valladolid, Spain.</p>
+<p>Prieto, L. P., J. I. Asensio-Pérez, J. A. Muñoz-Cristóbal, Y. Dimitriadis, I. M. Jorrín-Abellán, and E. Gómez-Sánchez (2013). “Enabling teachers to deploy CSCL designs across distributed learning environments”. In: <em>Learning Technologies, IEEE Transactions on</em> 6.4. Impact Factor: 1.22 (Q1), pp. 324-336.</p>
+<p>Prieto, L. P., Y. Dimitriadis, and J. I. Asensio-Pérez (2013). <em>Orchestration in Technology-Enhanced Learning: a banner and a conceptual framework</em>. Paper presented at the XXI University Conference on Educational Technology (JUTE 2013). Valladolid, Spain.</p>
+<p>Prieto, L. P., Y. Dimitriadis, B. Craft, M. Derntl, V. Emin, M. Katsamani, D. Laurillard, E. Masterman, S. Retalis, and E. Villasclaras (2013). “Learning design Rashomon II: exploring one lesson through multiple tools”. In: <em>Research in Learning Technology</em> 21.</p>
+<p>Prieto, L. P., J. A. Muñoz-Cristóbal, J. I. Asensio-Pérez, and Y. Dimitriadis (2013). <em>Flexible CSCL scripting using paper, generic Augmented Reality browsers and GLUEPS-AR</em>. Paper presented at the Workshop on Human-Computer Interaction and the Learning Sciences, 10th International Conference on Computer Supported Collaborative Learning (CSCL 2013). Madison, WI.</p>
+<p>Prieto, L. P., S. Villagrá-Sobrino, Y. Dimitriadis, J. I. Asensio-Pérez, and I. M. Jorrín-Abellán (2013). “Fostering CSCL Adoption: An Approach to Professional Development Focused on Orchestration”. In: <em>Proceedings of the 10th International Conference on Computer-Supported Collaborative Learning (CSCL 2013)</em>. (Madison, WI). Vol. 1. , pp. 383-390.</p>
+<p>Prieto, L. P., S. Villagrá-Sobrino, Y. Dimitriadis, and I. M. Jorrín-Abellán (2013). “Orchestrating classroom CSCL: a multi-level pattern approach for design and enactment”. In: <em>Handbook of Design in Educational Technology</em>. Ed. by R. Luckin, P. Goodyear, B. Grabowski, S. Puntambekar, J. Underwood and N. Winters. Routledge, pp. 112-123.</p>
+<p>Rodríguez-Triana, M. J., L. P. Prieto, S. Villagrá-Sobrino, and A. Martínez-Monés (2013). <em>Combinando guiado y monitorizaciÃ³n en actividades colaborativas soportadas por ordenador: un estudio de caso en el grado de Maestro/a en EducaciÃ³n Primaria de la Universidad de Valladolid</em>. Paper presented at the XXI University Conference on Educational Technology (JUTE 2013). Valladolid, Spain.</p>
 </div>
 <div id="section-8" class="section level2">
-<h2>2011</h2>
-<p>Dimitriadis, Y., L. P. Prieto and S. Villagrá-Sobrino (2011). <em>Designing for enactment: Multi-level patterns and routines in teacher practice</em>. Paper presented at the ``Art and Science of Learning Design’’ international workshop (ASLD11). London, UK.</p>
-<p>Prieto, L. P., J. I. Asensio-Pérez, Y. Dimitriadis, E. Gómez-Sánchez and J. A. Muñoz-Cristóbal (2011). “GLUE!-PS: a multi-language architecture and data model to deploy TEL designs to multiple learning environments”. In: <em>Proceedings of the 6th European Conference on Technology Enhanced Learning (EC-TEL 2011)</em>. (Palermo, Italy). , pp. 285-298.</p>
-<p>Prieto, L. P., Y. Dimitriadis and S. Villagrá-Sobrino (2011). <em>Representing learning design and classroom orchestration through atomic patterns</em>. Paper presented at the ``Art and Science of Learning Design’’ international workshop (ASLD11). London, UK.</p>
-<p>Prieto, L. P., Y. Dimitriadis, S. Villagrá-Sobrino, I. M. Jorrín-Abellán and A. Martínez-Monés (2011). <em>Orchestrating CSCL in primary classrooms: One vision of orchestration and the role of routines</em>. Paper presented at the ``How to integrate CSCL in classroom life: Orchestration’’ workshop co-located with the 9th International Conference on Computer-Supported Collaborative Learning (CSCL 2011). Hong Kong, China.</p>
-<p>Prieto, L. P, M. Holenko Dlab, I. GutiÃ©rrez, M. Abdulwahed and W. Balid (2011). “Orchestrating technology enhanced learning: a literature review and a conceptual framework”. In: <em>International Journal of Technology Enhanced Learning</em> 3.6, pp. 583-598.</p>
-<p>Prieto, L. P., S. Villagrá-Sobrino, Y. Dimitriadis, P. Schank, W. Penuel and A. H. DeBarger (2011). “Mind the gaps: Using patterns to change everyday classroom practice towards contingent CSCL teaching”. In: <em>Proceedings of the 9th International Conference on Computer-Supported Collaborative Learning (CSCL 2011)</em>. (Hong Kong, China). , pp. 518-525.</p>
-<p>Prieto, L. P, S. VillagrÃ¡-Sobrino, I. M. JorrÃ­n-AbellÃ¡n, A. MartÃ­nez-MonÃ©s and Y. Dimitriadis (2011). “Recurrent routines: Analyzing and supporting orchestration in technology-enhanced primary classrooms”. In: <em>Computers &amp; Education</em> 57.1. Impact Factor: 2.621, pp. 1214-1227.</p>
-<p>Roschelle, J., C. Patton, P. Schank, W. Penuel, C. Looi, W. Chen, A. Chan, L. P. Prieto, S. Villagrá-Sobrino and Y. Dimitriadis (2011). “CSCL and innovation: in classrooms, with teachers, among school leaders, in schools of education”. In: <em>Proceedings of the 9th International Conference on Computer-Supported Collaborative Learning (CSCL 2011)</em>. (Hong Kong, China). , pp. 1073-1080.</p>
-<p>Villagrá-Sobrino, S., I. M. Jorrín-Abellán, L. P. Prieto and S. García-Sastre (2011). <em>Tendiendo lazos entre escuela y universidad: rutinas de diseño y puesta en práctica de actividades colaborativas apoyadas con TIC como estrategia para el desarrollo profesional en educación primaria</em>. Paper presented at the Jornadas Universitarias de Tecnolog'ia Educativa (JUTE 2011). Sevilla, Spain.</p>
+<h2>2012</h2>
+<p>Alario-Hoyos, C., J. A. Muñoz-Cristóbal, L. P. Prieto, M. L. Bote-Lorenzo, J. I. Asensio-Pérez, E. Gómez-Sánchez, G. Vega-Gorgojo, and Y. Dimitriadis (2012). “GLUE!-GLUE!-PS: An approach to deploy non-trivial collaborative learning situations that require the integration of external tools in VLEs”. In: <em>Proceedings of the 1st Moodle Research Conference</em>. (Heraklion, Greece). , pp. 77-85.</p>
+<p>Karakostas, A., L. P. Prieto, and Y. Dimitriadis (2012). “Opportunities and challenges for adaptive collaborative support in Distributed Learning Environments: Evaluating the GLUE! suite of tools”. In: <em>Proceedings of the 12th International Conference on Advanced Learning Technologies (ICALT 2012)</em>. (Rome, Italy). , pp. 446-450.</p>
+<p>Muñoz-Cristóbal, J. A., J. I. Asensio-Pérez, L. P. Prieto, I. M. Jorrín-Abellán, Y. Dimitriadis, and A. Martínez-Monés (2012). <em>Helping educators to deploy CSCL scripts into mainstream VLEs that integrate third-party Web and Augmented Reality Tools</em>. Paper presented at the Workshop on Digital Ecosystems for Collaborative Learning 2012 held in conjunction with the International Conference of the Learning Sciences (ICLS 2012). Sydney, Australia.</p>
+<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, I. M. Jorrín-Abellán, and Y. Dimitriadis (2012a). “Lost in translation from abstract learning design to ICT implementation: a study using Moodle for CSCL”. In: <em>Proceedings of the European Conference on Technology-Enhanced Learning (EC-TEL 2012)</em>. (Saarbrücken, Germany). , pp. 264-277.</p>
+<p>Muñoz-Cristóbal, J. A., L. P. Prieto, J. I. Asensio-Pérez, I. M. Jorrín-Abellán, and Y. Dimitriadis (2012b). “Orchestrating TEL situations across spaces using Augmented Reality through GLUE!-PS AR”. In: <em>Bulletin of the IEEE Technical Committee on Learning Technology</em> 14.4, pp. 14-16.</p>
+<p>Prieto, L. P. (2012). “Supporting orchestration of blended CSCL scenarios in Distributed Learning Environments”. Ph.D. Thesis. School of Telecommunications Engineering, University of Valladolid, Spain. URL: <a href="https://www.dropbox.com/s/r1ky2t5igyuyx7u/20120903_Prieto_PhDThesisDissertation.pdf?dl=1">https://www.dropbox.com/s/r1ky2t5igyuyx7u/20120903_Prieto_PhDThesisDissertation.pdf?dl=1</a>.</p>
+<p>Prieto, L. P., J. A. Muñoz-Cristóbal, J. I. Asensio-Pérez, and Y. Dimitriadis (2012). “Making learning designs happen in distributed learning environments with GLUE!-PS”. In: <em>Proceedings of the European Conference on Technology-Enhanced Learning (EC-TEL 2012)</em>. (Saarbrücken, Germany). , pp. 489-494.</p>
 </div>
 <div id="section-9" class="section level2">
-<h2>2010</h2>
-<p>Prieto, L. P. (2010). <em>The many faces of orchestration: Towards a (more) operative definition</em>. Technical report. GSIC-EMIC research group, University of Valladolid, Spain. URL: <a href="http://www.gsic.uva.es/~lprisan/Prieto20101124-OrchestrationReport.pdf" class="uri">http://www.gsic.uva.es/~lprisan/Prieto20101124-OrchestrationReport.pdf</a>.</p>
-<p>Prieto, L. P., S. Villagrá-Sobrino, Y. Dimitriadis, I. M. Jorrín-Abellán, A. Martínez-Monés and R. Anguita-Martínez (2010). “Recurrent routines in the classroom madness: pushing patterns past the design phase”. In: <em>Proceedings of the 7th International Conference on Networked Learning</em>. (Aalborg, Denmark). , pp. 499-507.</p>
-<p>Villagrá-Sobrino, S., I. M. Jorrín-Abellán and L. P. Prieto (2010). <em>Fill in the gaps: A rural school community of practice to actively design technology-based learning activities</em>. Paper presented at 6th International Congress of Qualitative Inquiry. Urbana-Champaign, IL.</p>
+<h2>2011</h2>
+<p>Dimitriadis, Y., L. P. Prieto, and S. Villagrá-Sobrino (2011). <em>Designing for enactment: Multi-level patterns and routines in teacher practice</em>. Paper presented at the ``Art and Science of Learning Design’’ international workshop (ASLD11). London, UK.</p>
+<p>Prieto, L. P., J. I. Asensio-Pérez, Y. Dimitriadis, E. Gómez-Sánchez, and J. A. Muñoz-Cristóbal (2011). “GLUE!-PS: a multi-language architecture and data model to deploy TEL designs to multiple learning environments”. In: <em>Proceedings of the 6th European Conference on Technology Enhanced Learning (EC-TEL 2011)</em>. (Palermo, Italy). , pp. 285-298.</p>
+<p>Prieto, L. P., Y. Dimitriadis, and S. Villagrá-Sobrino (2011). <em>Representing learning design and classroom orchestration through atomic patterns</em>. Paper presented at the ``Art and Science of Learning Design’’ international workshop (ASLD11). London, UK.</p>
+<p>Prieto, L. P., Y. Dimitriadis, S. Villagrá-Sobrino, I. M. Jorrín-Abellán, and A. Martínez-Monés (2011). <em>Orchestrating CSCL in primary classrooms: One vision of orchestration and the role of routines</em>. Paper presented at the ``How to integrate CSCL in classroom life: Orchestration’’ workshop co-located with the 9th International Conference on Computer-Supported Collaborative Learning (CSCL 2011). Hong Kong, China.</p>
+<p>Prieto, L. P., M. Holenko Dlab, I. Gutiérrez, M. Abdulwahed, and W. Balid (2011). “Orchestrating technology enhanced learning: a literature review and a conceptual framework”. In: <em>International Journal of Technology Enhanced Learning</em> 3.6, pp. 583-598.</p>
+<p>Prieto, L. P., S. Villagrá-Sobrino, Y. Dimitriadis, P. Schank, W. Penuel, and A. H. DeBarger (2011). “Mind the gaps: Using patterns to change everyday classroom practice towards contingent CSCL teaching”. In: <em>Proceedings of the 9th International Conference on Computer-Supported Collaborative Learning (CSCL 2011)</em>. (Hong Kong, China). , pp. 518-525.</p>
+<p>Prieto, L. P., S. Villagrá-Sobrino, I. M. Jorrín-Abellán, A. Martínez-Monés, and Y. Dimitriadis (2011). “Recurrent routines: Analyzing and supporting orchestration in technology-enhanced primary classrooms”. In: <em>Computers &amp; Education</em> 57.1.  Impact Factor: 2.621 (Q1), pp. 1214-1227.</p>
+<p>Roschelle, J., C. Patton, P. Schank, W. Penuel, C. Looi, W. Chen, A. Chan, L. P. Prieto, S. Villagrá-Sobrino, and Y. Dimitriadis (2011). “CSCL and innovation: in classrooms, with teachers, among school leaders, in schools of education”. In: <em>Proceedings of the 9th International Conference on Computer-Supported Collaborative Learning (CSCL 2011)</em>. (Hong Kong, China). , pp. 1073-1080.</p>
+<p>Villagrá-Sobrino, S., I. M. Jorrín-Abellán, L. P. Prieto, and S. García-Sastre (2011). <em>Tendiendo lazos entre escuela y universidad: rutinas de diseño y puesta en práctica de actividades colaborativas apoyadas con TIC como estrategia para el desarrollo profesional en educación primaria</em>. Paper presented at the Jornadas Universitarias de Tecnolog'ia Educativa (JUTE 2011). Sevilla, Spain.</p>
 </div>
 <div id="section-10" class="section level2">
-<h2>2009</h2>
-<p>Prieto, L. P. (2009). “An exploration of teacher enactment of CSCL activities in computer-integrated classrooms”. Master’s thesis (Suficiencia Investigadora). Escuela TÃ©cnica Superior de Ingenieros en Telecomunicaciones, Universidad de Valladolid. URL: <a href="http://gsic.uva.es/~lprisan/Prieto2009_ExplorationEnactmentCSCLCiC.pdf" class="uri">http://gsic.uva.es/~lprisan/Prieto2009_ExplorationEnactmentCSCLCiC.pdf</a>.</p>
+<h2>2010</h2>
+<p>Prieto, L. P. (2010). <em>The many faces of orchestration: Towards a (more) operative definition</em>. Technical report. GSIC-EMIC research group, University of Valladolid, Spain. URL: <a href="http://www.gsic.uva.es/~lprisan/Prieto20101124-OrchestrationReport.pdf">http://www.gsic.uva.es/~lprisan/Prieto20101124-OrchestrationReport.pdf</a>.</p>
+<p>Prieto, L. P., S. Villagrá-Sobrino, Y. Dimitriadis, I. M. Jorrín-Abellán, A. Martínez-Monés, and R. Anguita-Martínez (2010). “Recurrent routines in the classroom madness: pushing patterns past the design phase”. In: <em>Proceedings of the 7th International Conference on Networked Learning</em>. (Aalborg, Denmark). , pp. 499-507.</p>
+<p>Villagrá-Sobrino, S., I. M. Jorrín-Abellán, and L. P. Prieto (2010). <em>Fill in the gaps: A rural school community of practice to actively design technology-based learning activities</em>. Paper presented at 6th International Congress of Qualitative Inquiry. Urbana-Champaign, IL.</p>
 </div>
 <div id="section-11" class="section level2">
+<h2>2009</h2>
+<p>Prieto, L. P. (2009). “An exploration of teacher enactment of CSCL activities in computer-integrated classrooms”. Master’s thesis (Suficiencia Investigadora). Escuela Técnica Superior de Ingenieros en Telecomunicaciones, Universidad de Valladolid. URL: <a href="http://gsic.uva.es/~lprisan/Prieto2009_ExplorationEnactmentCSCLCiC.pdf">http://gsic.uva.es/~lprisan/Prieto2009_ExplorationEnactmentCSCLCiC.pdf</a>.</p>
+</div>
+<div id="section-12" class="section level2">
 <h2>2008</h2>
-<p>Coppola, M, Y. JÃ©gou, B. Matthews, C. Morin, L. P. Prieto, O. D. SÃ¡nchez, E. Y. Yang and H. Yu (2008). “Virtual organization support within a grid-wide operating system”. In: <em>Internet Computing, IEEE</em> 12.2. Impact Factor: 2.309, pp. 20-28.</p>
-<p>Cortes, T., C. Franke, Y. Jégou, T. Kielmann, D. Laforenza, B. Matthews, C. Morin, L. P. Prieto, A. Reinefeld and others (2008). <em>XtreemOS: a vision for a Grid operating system</em>. White paper. XtreemOS Project Consortium. URL: <a href="https://www.xtreemos.org/project/publications//research-papers/xtreemos-cacm.pdf" class="uri">https://www.xtreemos.org/project/publications//research-papers/xtreemos-cacm.pdf</a>.</p>
+<p>Coppola, M., Y. Jégou, B. Matthews, C. Morin, L. P. Prieto, O. D. Sánchez, E. Y. Yang, and H. Yu (2008). “Virtual organization support within a grid-wide operating system”. In: <em>Internet Computing, IEEE</em> 12.2. Impact Factor: 2.309, (Q1), pp. 20-28.</p>
+<p>Cortes, T., C. Franke, Y. Jégou, T. Kielmann, D. Laforenza, B. Matthews, C. Morin, L. P. Prieto, A. Reinefeld, and others (2008). <em>XtreemOS: a vision for a Grid operating system</em>. White paper. XtreemOS Project Consortium. URL: <a href="https://www.xtreemos.org/project/publications//research-papers/xtreemos-cacm.pdf">https://www.xtreemos.org/project/publications//research-papers/xtreemos-cacm.pdf</a>.</p>
 </div>
 </div>
 
@@ -467,7 +587,7 @@ list-style-type: none;
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -475,6 +595,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

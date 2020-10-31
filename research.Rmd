@@ -14,13 +14,17 @@ list-style-type: none;
 library(RefManageR)
 ```
 
-My research interests lie at the intersection of **education and technology**, with a dash of human-computer interaction. I am mainly interested in understanding what happens in the (physical) classroom, and in blended learning settings that combine face-to-face and online activities. With that understanding, my aim is to support teachers and learners with novel technologies that support them in their **everyday** learning. I've paid special attention to more complex, active methods of learning such as collaborative learning, or the provision of timely feedback through learning analytics. In order to do that, I have used a variety of technologies and methods, from very simple [questionnaires aimed at reflection](http://prolearning.realto.ch), to [community-oriented platforms to support learning design by teachers](http://ilde.upf.edu), [augmented paper tabletops](http://chili.epfl.ch/page-110567-en.html), or cutting-edge [mobile eye-tracking technology](http://chili.epfl.ch/page-118328-en.html).
+I am currently a Senior Research Fellow at the School of Educational Sciences in Tallinn University (Estonia), and member of the Center of Excellence in Educational Innovation at the same university. A telecom engineer by training, I later pursued a Ph.D. and an academic career in the fields of technology-enhaced learning (TEL), computer-supported collaborative learning (CSCL), learning design (LD) and learning analytics (LA).
+
+My research interests have always emphasized the **naturalistic observation of teaching and learning practice** using of a variety of methods, from unstructured qualitative observation and analysis, wearable sensors such as mobile eye-trackers. I have applied this variety of methods, for example, to understand teachers' classroom orchestration -- in what has been termed 'multimodal teaching analytics'. I have also proposed and evaluated **technologies to support educational practice**, from learning design tools to help teachers implement their pedagogical designs, to reflection tools that enable practitioners to gather and visualize data about their daily practice. Recently, I am joining these two research strands (naturalistic observation and support of professional practice), along with new data collection and analysis tools (e.g., diaries and epistemic network analysis) to investigate the field of **doctoral education**, of which I am an avid practitioner and educator (e.g., through doctoral workshops and my blog, [A Happy PhD](https://www.ahappyphd.org).
+
+I have held  positions in well-known labs in technology-enhanced learning in Spain, Switzerland and Estonia, including a prestigious Marie Curie Fellowship. Throughout my research career, I have always worked in **multi-disciplinary** teams involving educational scientists, psychologists, and computer scientists. Learning from these inter-disciplinary contacts, I have used (and devised) a variety of theoretical frameworks and analytical lenses, both qualitative *and* quantitative.
 
 
 
 # Academic Roles
 
-* 2016 - 19
+* 2016 - 20
     + Senior Research Fellow - Center of Excellence in Educational Innovation, School of Educational Sciences, [Tallinn University](http://tlu.ee), Estonia.
 * 2014 - 16
     + Scientist (Marie Curie Fellow) - [CHILI Lab](http://chili.epfl.ch/), [École Polytechnique Fédérale de Lausanne (EPFL)](http://epfl.ch/), Switzerland.
@@ -43,6 +47,8 @@ My research interests lie at the intersection of **education and technology**, w
 
 # Awards and Distinctions
 
+* 2020
+    + Estonian National Research Award (Social Sciences, Team Award), Estonian Academy of Sciences
 * 2016
     + Best Paper Award, European Conference on Technology-Enhanced Learning.
 * 2014 - 15
@@ -69,15 +75,17 @@ Valladolid.
 
 # Publications
 
+(see [my Google Scholar profile](https://scholar.google.com/citations?user=ySpnj0MAAAAJ&hl=en&oi=ao) for a more up-to-date version with citation counts)
+
 
 ```{r echo=FALSE, results="asis",comment=FALSE, warning=F}
-file_pubs <- ReadBib("cvreferences.bib", check=F)
+file_pubs <- ReadBib("cvreferences.bib", check=F,  .Encoding = "UTF-8")
 dates <- unlist(unique(file_pubs$year))[order(unlist(unique(file_pubs$year)),decreasing = TRUE)]
-#Prints recerences
+#Prints references
 for (date in dates) {
-  cat(paste0("##",date),"\n")
+  cat(paste0("## ",date),"\n\n")
   print(file_pubs[list(year=date)],.opts = list(check.entries=F, style="markdown",bib.style ="authoryear" ,max.names =10,dashed=FALSE))
-  cat("\n")
+  cat("\n\n")
 }
 
 ```

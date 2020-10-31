@@ -4,7 +4,7 @@ library(rmarkdown)
 #setwd("~/Downloads/luispprieto.com/rmd_personal_site/")
 
 #Render the site
-render_site(encoding="utf-8")
+render_site(encoding="UTF-8")
 
 #Creates a PDF of the CV
 #render("cv.Rmd", "pdf_document",output_file="./_site/cv_Alex_Singleton.pdf")
